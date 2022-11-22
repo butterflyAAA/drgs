@@ -1,0 +1,82 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../css/emr.css" type="text/css">
+<link rel="stylesheet" href="../css/font.css" type="text/css">
+<link rel="stylesheet" href="../css/b1.css" type="text/css">
+<link rel=stylesheet type=text/css href="../css/theme_bluewater.css">
+<title>选择时间</title>
+<link href="../font.css" rel="stylesheet" type="text/css">
+</head>
+<script language="javascript">
+var hh=0;
+var mm=0;
+var now=new Date();
+hh=now.getHours();
+mm=now.getMinutes();
+
+function select_ok(){
+  var valuex="";
+  valuex=window.frm_time.hour.value+":"+window.frm_time.minute.value
+  window.returnValue=valuex;
+  window.close();
+}
+</script>
+
+<body>
+<div id='VicPopCal' style='OVERFLOW: hidden; POSITION: absolute; VISIBILITY: ; border: 0px ridge; width: 100%; height: 100%; top: 0; left: 0; z-index: 100; overflow: hidden; background-color: #FFFFFF;'>
+  
+<form method="POST" name="frm_time">
+  <table width="219" border='0' align='center' cellpadding="0" cellspacing="0">
+ <tr>
+      <td height="10" align='center' valign='top' background="../images/date/date_top_bg.png" style="padding-top:1px;">		
+	  </td>  
+	</tr> 
+ <tr   background="../images/date/date_top_bg.png"> 
+      <td height="25"  align="center" background="../images/date/date_bottom_bg.png">时
+      <select name="hour" size="1"  style="border:1 solid #cccccc; background-image:url(../images/date/date_time_bg.jpg)">
+          <script language="javascript">
+          //时
+          var s_h="";
+          for(var i=0;i<24;i++){
+            s_h=i+"";
+            if (s_h.length<2){s_h="0"+s_h;}
+            if (i==hh){
+              document.write("<option value="+s_h+" selected>"+i+"</option>")
+            }
+            else{
+              document.write("<option value="+s_h+">"+i+"</option>")
+            }
+          }
+        </script>
+        </select>
+        分
+      <select name="minute" size="1"  style="border:1 solid #cccccc; background-image:url(../images/date/date_time_bg.jpg)">
+          <script language="javascript">
+          //分
+          var s_m="";
+          for(var i=0;i<60;i++){
+            s_m=i+"";
+            if(s_m.length<2){s_m="0"+s_m;}
+            if(i==mm){
+              document.write("<option value="+s_m+" selected>"+i+"</option>")
+            }
+            else{
+              document.write("<option value="+s_m+">"+i+"</option>")
+            }
+          }
+        </script>
+        </select></td>
+    </tr>
+	<tr>
+		<td  align="center" style="background-image:url(../images/date/date_bottom_bg2.png); background-position:bottom; padding-top:3px; padding-bottom:13px;" >
+		<input type='button' name='btn_blank' value='确 定' id="CAL_B_BLANK" onclick='select_ok();' class="f" style="margin-top:0px;">
+		<input type='button' name='btn_close' value='关 闭' onclick="javascript:window.returnValue='';window.close();" class="f">
+              </td>
+  </tr>
+</table>
+</form>
+</div>
+</body>
+
+</html>

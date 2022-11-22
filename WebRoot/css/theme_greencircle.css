@@ -1,0 +1,332 @@
+body {
+	margin: 0px;
+	SCROLLBAR-HIGHLIGHT-COLOR: #A0BF7B;
+	SCROLLBAR-SHADOW-COLOR: #A0BF7B;
+	COLOR: #000000;
+	SCROLLBAR-3DLIGHT-COLOR: #ECF6DD;
+	SCROLLBAR-TRACK-COLOR: #f9f9f9;
+	SCROLLBAR-DARKSHADOW-COLOR: #ECF6DD;
+	SCROLLBAR-BASE-COLOR: #ECF6DD;
+	background-color: #FFFFFF;
+	overflow: hidden;
+	font-size: 14px;
+	border-collapse: collapse;
+}
+.dl_bg{
+background-image:url(../images/greencircle/greencircle_dl_bg.jpg); 
+background-repeat:repeat-x; 
+background-position:top; 
+background-color:#F9FCF4;
+}
+.dl_dl{
+background-image:url(../images/greencircle/greencircle_dl_dl.png); 
+width:109px;
+height:33px;
+margin-top:14; margin-left:28;
+}
+.f_dl {
+	background-image: url(../images/bluewater/bluewater_dl_bt.png);
+	cursor: hand;
+	border: 0 none;
+	padding-top: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	height: 30px;
+	width:90px;
+	background-color: #ffffff;
+	overflow: visible;
+	font-weight:bold; 
+	color:#333
+}
+.dl_txt{
+	width:186px;
+	background-color:transparent;
+	border:0 none;
+	background-image:url(../images/bluewater/bluewater_dl_txt.png);
+	height:24px;
+	line-height: 22px;
+	padding-left:10px;
+}
+.titlebar_bg{
+height:42px;
+background-image:url(../images/greencircle/greencircle_titlebar_bg.png);
+table-layout:fixed;
+}
+.titlebar_logo_emr{
+	background-image:url(../images/greencircle/greencircle_titlebar_logo_emr.png);
+	background-repeat:no-repeat;
+	width:240px;
+	background-position: 20px 0px;
+}
+.titlebar_logo_cis{
+	background-image:url(../images/greencircle/greencircle_titlebar_logo_cis.png);
+	background-repeat:no-repeat;
+	width:240px;
+		background-position: 20px 0px;
+}
+.toolbar_body_bg{
+background-color:#BAD677; 
+padding-top:1px;
+}
+.toolbar_bg{
+background-image:url(../images/greencircle/greencircle_toolbar2_bg.jpg);
+height:25px;
+width:100%;
+background-repeat:repeat-x
+}
+.toolbar_left{
+	background-image:url(../images/greencircle/greencircle_toolbar2_left.jpg);
+	width:5px;
+	background-repeat:no-repeat
+}
+.toolbar_right{
+background-image:url(../images/greencircle/greencircle_toolbar2_right.jpg);
+width:5px;
+background-repeat:no-repeat
+}
+.toolbar_center{
+color:#4A6018; 
+padding:2 0 0 0;
+}
+.toolbox_topleft{
+	background-image:url(../images/greencircle/greencircle_toolbox_left-corners.png);
+	height:30px;
+	padding-left:10px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+.toolbox_topright{
+	background-image:url(../images/greencircle/greencircle_toolbox_right-corners.png);
+	padding-right: 10px;
+	background-repeat: no-repeat;
+	background-position: right 0px;
+}
+.toolbox_topcenter{
+	background-image: url(../images/greencircle/greencircle_toolbox_topcenter.png);
+	height: 30px;
+	color: #ffffff;
+	font-weight: bold;
+	padding-top: 5px;
+}
+.toolbox_middleleft{
+	background-image:url(../images/greencircle/greencircle_toolbox_left-right.png);
+	background-repeat:repeat-y;
+	padding-left:10px;
+	background-color: #FFFFFF;
+	background-position: 0px 0px;
+	height: 100%;
+}
+.toolbox_middlecenter{
+	background-color: #FFFFFF;
+	height: 100%;
+}
+.toolbox_middleright{
+	background-image:url(../images/greencircle/greencircle_toolbox_left-right.png);
+	background-repeat:repeat-y;
+	background-position: right 0px;
+	padding-right: 10px;
+	height: 100%;
+}
+.toolbox_bottomleft{
+	height:11px;
+	background-image: url(../images/greencircle/greencircle_toolbox_left-corners.png);
+	background-repeat: no-repeat;
+	background-position: 0px bottom;
+	padding-left: 10px;
+}
+.toolbox_bottomcenter{
+	background-image:url(../images/greencircle/greencircle_toolbox_bottomcenter.png);
+	height: 11px;
+	overflow: hidden;
+}
+.toolbox_bottomright{
+	background-image:url(../images/greencircle/greencircle_toolbox_right-corners.png);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	padding-right: 10px;
+	height: 11px;
+}
+.toolbox_close{
+position:absolute; right:0;
+width:11px;
+height:9px;
+cursor:hand;
+background-image:url(../images/greencircle/greencircle_toolbox_close.png);
+background-repeat:no-repeat;
+}
+.main_bg{
+	background-image:url(../images/greencircle/greencircle_main_bg.jpg);
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#ffffff;
+	padding: 37 10 10 10;
+}
+.main_bg_ntool{
+	background-image:url(../images/greencircle/greencircle_main_bg.jpg);
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#ffffff;
+	padding: 5;
+}
+.main_bg_gray{
+	background-image:url(../images/bluewater/bluewater_main_bg_gray.jpg);
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#f7f7f7;
+	padding: 37 10 10 10;
+}
+.main_toolbar_bg{
+	background-image:url(../images/greencircle/greencircle_main_toolbar_bg.gif);
+	background-repeat:repeat-x;
+	background-position: 0px 29px;
+	width:100%;
+	margin:-37 0 0 0;
+	height:32px;
+	text-align: right;
+	padding: 3 10 0 0;
+	position: absolute;
+}
+.main_div {
+	height: 100%;
+	width: 100%;
+	padding-bottom: 0px;
+	overflow: auto;
+}
+.his_searcharea_bg{
+	background-image:url(../images/greencircle/greencircle_main_toolbar_bg.gif);
+	background-repeat:repeat-x;
+	background-position: top bottom;
+	width:100%;
+	margin-bottom:10;
+	padding-bottom:3;
+}
+.grid thead,.th_table thead,.tbody_table thead {
+	background-image: url(../images/greencircle/greencircle_grid_th_bg.jpg);
+	background-color: #DBEDBB;
+}
+.grid th,.th_table th,.tbody_table th {
+	border: 1px solid #A0BF7B;
+}
+.grid tbody td,.th_table tbody td,.tbody_table tbody td {
+	border: 1px solid #A0BF7B;
+}
+.grid_box {
+	border: 1px solid #A0BF7B;
+}
+.grid_box thead {
+	background-image: url(../images/greencircle/greencircle_grid_th_bg.jpg);
+	background-color: #DBEDBB;
+	border-bottom: 1px solid #A0BF7B;
+}
+.grid_box thead th {
+	border-bottom: 1px solid #A0BF7B;
+}
+.grid_box td {
+	border-bottom: 1px solid #A0BF7B;
+}
+.none {
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.none td { 
+	border: 0 none;
+	border-collapse: collapse;
+	padding-bottom: 2px;
+	padding-top: 2px;
+}
+.his_groupbox{
+border:1 solid #88B02B;
+margin-bottom:10px;
+padding:0 10 10 10;
+}
+.his_groupbox legend {
+	font-weight: bold;
+	margin-right:10px;
+}
+.x-window-tc {
+	BACKGROUND: url(../images/greencircle/window/top-bottom.png) repeat-x 0px 0px;
+	OVERFLOW: hidden;
+	height: 25px;
+}
+.x-window-tl {
+	PADDING-LEFT: 6px;
+	BACKGROUND: url(../images/greencircle/window/left-corners.png) no-repeat 0px 0px;
+	height: 20px;
+}
+.x-window-tr {
+	PADDING-RIGHT: 6px; BACKGROUND: url(../images/greencircle/window/right-corners.png) no-repeat right 0px
+}
+.x-window-mc {
+	BORDER: #88B02D 1px solid;
+	PADDING: 0px;
+	BACKGROUND: #ffffff;
+	height: 100%;
+	overflow:hidden;
+}
+.x-window-mc_gray {
+	BORDER: #88B02D 1px solid;
+	PADDING: 0px;
+	BACKGROUND: #f7f7f7;
+	height: 100%;
+	overflow:hidden;
+}
+.x-window-ml {
+	PADDING-LEFT: 6px;
+	BACKGROUND: url(../images/greencircle/window/left-right.png) repeat-y 0px 0px;
+	height: 100%;
+}
+.x-window-mr {
+	PADDING-RIGHT: 6px;
+	BACKGROUND: url(../images/greencircle/window/left-right.png) repeat-y right 0px;
+	height: 100%;
+}
+.x-window-bl {
+	PADDING-LEFT: 6px;
+	BACKGROUND: url(../images/greencircle/window/left-corners.png) no-repeat 0px bottom
+}
+.x-window-br {
+	PADDING-RIGHT: 6px;
+	BACKGROUND: url(../images/greencircle/window/right-corners.png) no-repeat right bottom
+}
+.x-window-bc {
+	BACKGROUND: url(../images/greencircle/window/top-bottom.png) repeat-x 0px bottom;
+	height: 15px;
+}
+.x-window-header{
+	padding:7 0 0 5
+}
+/*tree*/
+.tree_bg{
+background-image:url(../images/greencircle/greencircle_tree_bg.png);
+background-repeat:repeat-x; 
+background-position:top;
+background-color:#FBFDF7;
+
+}
+.tree_tree{
+width:14; 
+height:11; 
+background-image:url(../images/greencircle/greencircle_tree_tree.png);
+margin-left:5px;
+}
+.tree_icon{
+width:14; 
+height:11; 
+background-image:url(../images/bluewater/bluewater_tree_icon.png);
+}
+.tree_itemline{
+padding:2px;background: url(../images/greencircle/greencircle_tree_itemline.png) no-repeat center bottom;
+}
+.tree_bg1{
+	background-image:url(../images/greencircle/greencircle_tree_bg1.jpg);
+	border-bottom:1px solid #8FBA2E;
+	color:#000000;
+}
+.tree_itembg{
+border-bottom:1px solid #8FBA2E;background:url(../images/greencircle/greencircle_tree_itembg.jpg) repeat-y;background-color:#FBFDF7;
+}
+.tree_title{
+background-image:url(../images/greencircle/greencircle_tree_title.gif);
+width:6px;
+height:12px;}

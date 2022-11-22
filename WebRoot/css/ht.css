@@ -1,0 +1,82 @@
+@CHARSET "UTF-8";
+
+.ht-ajax-loading {
+	font-size: 12px;
+	background-image: url(../images/default/grid/loading.gif);
+	background-repeat: no-repeat;
+	padding: 2px 0 0 20px;
+	margin: 5px 0 5px 5px;
+}
+
+.ht-tree {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+.ht-tree div {
+	padding-left: 0px;
+}
+
+.ht-tree p,.ht-tree li {
+	margin: 0 0 0 0;
+	/*white-space: nowrap;*/
+	line-height: 150%;
+	cursor: pointer;
+}
+
+.ht-tree p {
+	padding-left: 16px;
+}
+
+.ht-tree ul {
+	margin: 0 0 0 0;
+}
+
+.ht-tree li {
+	padding-left: 28px;
+	list-style: none;
+}
+
+.ht-tree-node-normal {
+	text-decoration: none;
+}
+
+.ht-tree-node-hover {
+	text-decoration: underline;
+}
+
+.ht-tree-node-expand p {
+	background: transparent url(../images/folder-open.png) no-repeat;
+}
+
+.ht-tree-node-collapse p {
+	background: transparent url(../images/folder-close.png) no-repeat;
+}
+
+.ht-tree-node-expand ul,.ht-tree-node-expand div {
+	display: "";
+}
+
+.ht-tree-node-collapse ul,.ht-tree-node-collapse div {
+	display: none;
+}
+.ht-tree-node-expand ul li {
+	background-color: transparent;
+	background-image: url(images/file.gif);
+	background-repeat: no-repeat;
+	background-position: 12px 3px;
+}
+.ht-tree-node-expand .reportintegration_bg  {
+	width:236px;
+	background-image:none;
+	background-image:url(../images/reportintegration_bg.png);
+	background-position:left top;
+	border:1 solid #d8d8d8;
+	margin:0 5 3 -22;
+	padding:2 0 0 5;
+}
+
+.ht-tree-node-expand div,.ht-tree-node-collapse div{
+padding-left:12px;}
+

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+	<!-- 表 223 输入-入院信息（节点标识：adminfo） -->
+	<adminfo>
+		<mdtrt_sn isnull="N"></mdtrt_sn><!--就医流水号	字符型	30		Y	院内唯一号-->
+		<mdtrt_id></mdtrt_id><!--就诊ID	字符型	30			医保病人必填-->
+		<psn_no	></psn_no><!--人员编号	字符型	30			医保病人必填-->
+		<mdtrtsn isnull="N"  table="INPATIENT">adminissionNo</mdtrtsn><!--住院号	字符型	30		Y	-->
+		
+		<name isnull="N" table="INPATIENT">patientName</name><!--姓名	字符型	50		Y	-->
+		<gend isnull="N" table="INPATIENT">sexCode</gend><!--性别	字符型	6	Y	Y	-->
+		<age type="number" table="INPATIENT">age</age><!--年龄	数值型	4,1			-->
+		<adm_rec_no isnull="N" table="INPATIENT">ipid</adm_rec_no><!--入院记录流水号	字符型	18		Y	-->
+		<wardarea_name isnull="N" table="INPATIENT">wardName</wardarea_name><!--病区名称	字符型	50		Y	-->
+		<dept_code isnull="N" table="INPATIENT" dict="caty">deptCode></dept_code><!--科室代码	字符型	30	Y	Y	参照科室代码（dept）-->
+		<dept_name isnull="N" table="INPATIENT" >deptName</dept_name><!--科室名称	字符型	50		Y	-->
+		<bedno isnull="N" table="INPATIENT">bedNo</bedno><!--病床号	字符型	10		Y	-->
+		<adm_time isnull="N" table="INPATIENT" type="date" format="yyyy-MM-dd HH:mm:ss">admissionTime</adm_time><!--入院时间	日期时间型			Y	-->
+		<illhis_stte_name isnull="N" table="HOSPITALRECORD" >historySource</illhis_stte_name><!--病史陈述者姓名	字符型	50		Y	-->
+		<illhis_stte_rltl isnull="N" table="HOSPITALRECORD" dict="patn_rlts">sourceRelation</illhis_stte_rltl><!--陈述者与患者关系代码	字符型	2		Y	-->
+		<stte_rele isnull="N" table="HOSPITALRECORD">reliability</stte_rele><!--陈述内容是否可靠标识	字符型	1		Y	-->
+		<chfcomp isnull="N"  struct_id="CHIEF_COMPLAINT" length="30"></chfcomp><!--主诉	字符型	100		Y	-->
+		<dise_now isnull="N" struct_id="HPI" dict="isnotnull"></dise_now><!--现病史	字符型	100		Y	-->
+		<hlcon isnull="N" struct_id="ELAPSEMHIS" dict="hlcon"></hlcon><!--健康状况	字符型	3		Y	-->
+		<dise_his isnull="N" struct_id="ELAPSEMHIS" dict="dise_his"></dise_his><!--疾病史（含外伤）	字符型	100		Y	-->
+		<ifet isnull="N" dict="infect">0</ifet><!--患者传染性标志	字符型	1		Y	-->
+		<ifet_his isnull="N">无</ifet_his><!--传染病史	字符型	1000		Y	-->
+		<prev_vcnt isnull="N" struct_id="ELAPSEMHIS" dict="prev_vcnt"></prev_vcnt><!--预防接种史	字符型	1000		Y	-->
+		<oprn_his isnull="N" struct_id="ELAPSEMHIS" dict="oprn_his"></oprn_his><!--手术史	字符型	1000		Y	-->
+		<bld_his isnull="N"  struct_id="ELAPSEMHIS" dict="bld_his"></bld_his><!--输血史	字符型	1000		Y	-->
+		<algs_his isnull="N"  struct_id="ELAPSEMHIS" dict="algs_his"></algs_his><!--过敏史	字符型	1000		Y	-->
+		<psn_his isnull="N" struct_id="INDIVIDUALMHIS" dict="isnotnull"></psn_his><!--个人史	字符型	1000		Y	-->
+		<mrg_his isnull="N" struct_id="MENSESHIS" dict="isnotnull"></mrg_his><!--婚育史	字符型	1000		Y	-->
+		<mena_his isnull="N" struct_id="MENSTRUALHIS" dict="mena_his"></mena_his><!--月经史	字符型	1000		Y	-->
+		<fmhis isnull="N" struct_id="FAMILYHIS" dict="isnotnull"></fmhis><!--家族史	字符型	1000		Y	-->
+		<physexm_tprt isnull="N" type="number" struct_id="007FFDB36A774B8C8DA7B0D8C583431B;table1_2_3_TextTextBox_1"></physexm_tprt><!--体格检查 体温（℃）	数值型	5,1		Y	-->
+		<physexm_pule isnull="N" type="number" struct_id="D94F698742194ED9B7225EB3235948E0;table1_1_3_TextTextBox_1" length="3"></physexm_pule><!--体格检查脉率（次 /mi数字）	数值型	3		Y	-->
+		<physexm_vent_frqu isnull="N" type="number" struct_id="723F4B499DDD4FD8A5372EEA117240E2;table1_1_4_TextTextBox_1" length="3"></physexm_vent_frqu><!--体格检查呼吸频率	字符型	3		Y	-->
+		<physexm_systolic_pre isnull="N" type="number" struct_id="723F4B499DDD4FD8A5372EEA117240E2;table1_2_2_TextTextBox_1;xy1"></physexm_systolic_pre><!--体格检查收缩压 （mmHg）	字符型	3		Y	-->
+		<physexm_dstl_pre isnull="N" type="number"  struct_id="8E884C212C1F41109A492365F85DE948;table1_2_2_TextTextBox_2;szy1"></physexm_dstl_pre><!--体格检查舒张压 （mmHg）	字符型	3		Y	-->
+		<physexm_height isnull="N" struct_id="D3421A0644FD4EA880539A211087D8C1" dict="physexm_height" type="number"></physexm_height><!--体格检查身高（cm）	数值型	6，1		Y	-->
+		<physexm_wt isnull="N" struct_id="2ED629FB60F84C85BEE91993CB5102A1" dict="physexm_wt" type="number"></physexm_wt><!--体格检查体重（kg）	数值型	7，2		Y	-->
+		<physexm_ordn_stas isnull="N" struct_id="F8B1C8BF8F744865933A3C2DACD2AD71" dict="isnotnull" length="33"></physexm_ordn_stas><!--体格检查一般状况 检查结果	字符型	100		Y	-->
+		<physexm_skin_musl isnull="N" struct_id="8549FE693FDE4145B4AE2FF156AE8AA1" dict="isnotnull"></physexm_skin_musl><!--体格检查皮肤和黏膜检查结果	字符型	100		Y	-->
+		<physexm_spef_lymph isnull="N" struct_id="807AA8FE241248EAA8AFFEF1C9F445DF" dict="isnotnull"></physexm_spef_lymph><!--体格检查全身浅表淋巴结检查结果	字符型	100		Y	-->
+		<physexm_head isnull="N" struct_id="1F296D7F1AD9442486DA3912237F54CA" dict="isnotnull"></physexm_head><!--体格检查头部及其器官检查结果	字符型	100		Y	-->
+		<physexm_neck isnull="N" struct_id="0591EC3892C240359EF8DF79D9758D9E" dict="isnotnull"></physexm_neck><!--体格检查颈部检查结果	字符型	100		Y	-->
+		<physexm_chst isnull="N" struct_id="EDC60DA8066D4C6587C4A874C923D61B" dict="isnotnull"></physexm_chst><!--体格检查胸部检查结果	字符型	100		Y	-->
+		<physexm_abd isnull="N" struct_id="8A16E3F458D24950B99D39D17860C13D" dict="isnotnull"></physexm_abd><!--体格检查腹部检查结果	字符型	100		Y	-->
+		<physexm_finger_exam isnull="N" struct_id="AE7F257C29A74AF0BCF23041CBB72000" dict="isnotnull"></physexm_finger_exam><!--体格检查肛门指诊检查结果描述	字符型	100		Y	-->
+		<physexm_genital_area isnull="N" struct_id="B541A4C5DCDB4AD390E1312542BB2BC0" dict="isnotnull"></physexm_genital_area><!--体格检查外生殖器检查结果	字符型	100		Y	-->
+		<physexm_spin isnull="N" struct_id="AA0BB4F713534B1EA4243E815F02D582" dict="isnotnull"></physexm_spin><!--体格检查脊柱检查结果	字符型	100		Y	-->
+		<physexm_all_fors isnull="N" struct_id="AA0BB4F713534B1EA4243E815F02D582" dict="isnotnull"></physexm_all_fors><!--体格检查四肢检查结果	字符型	100		Y	-->
+		<nersys isnull="N" struct_id="AA0BB4F713534B1EA4243E815F02D582" dict="isnotnull" length="33"></nersys><!--体格检查神经系统检查结果	字符型	100		Y	-->
+		<spcy_info isnull="N" struct_id="SPECIALCHECK"  dict="isnotnull"></spcy_info><!--专科情况	字符型	100		Y	-->
+		<asst_exam_rslt isnull="N" struct_id="ASSISTANTCHECK" dict="isnotnull"></asst_exam_rslt><!--辅助检查结果	字符型	100		Y	-->
+		<tcm4d_rslt	></tcm4d_rslt><!--中医“四诊”观察结果描述	字符型	100		N	-->
+		<syddclft	></syddclft><!--辨证分型代码	字符型	7		N	-->
+		<syddclft_name	></syddclft_name><!--辩证分型名称	字符型	50		N	-->
+		<prnp_trt	></prnp_trt><!--治则治法	字符型	100		N	-->
+		<rec_doc_code isnull="N" table="INPATIENT">doctorID</rec_doc_code><!--接诊医生编号	字符型	30		Y	-->
+		<rec_doc_name isnull="N" table="INPATIENT">doctor</rec_doc_name><!--接诊医生姓名	字符型	50		Y	-->
+		<ipdr_code isnull="N" table="INPATIENT">doctorID</ipdr_code><!--住院医师编号	字符型	30		Y	-->
+		<ipdr_name isnull="N" table="INPATIENT">doctor</ipdr_name><!--住院医师姓名	字符型	50		Y	-->
+		<chfdr_code isnull="N" table="INPATIENT">doctorID</chfdr_code><!--主任医师编号	字符型	30		Y	-->
+		<chfdr_name isnull="N" table="INPATIENT">doctor</chfdr_name><!--主任医师姓名	字符型	50		Y	-->
+		<chfpdr_code isnull="N" table="INPATIENT">doctorID</chfpdr_code><!--主诊医师代码	字符型	30		Y	-->
+		<chfpdr_name isnull="N" table="INPATIENT">doctor</chfpdr_name><!--主诊医师姓名	字符型	50		Y	-->
+		<main_symp isnull="N" struct_id="CHIEF_COMPLAINT" length ="33"></main_symp><!--主要症状	字符型	50		Y	-->
+		<adm_rea isnull="N"  struct_id="CHIEF_COMPLAINT"></adm_rea><!--入院原因	字符型	1000		Y	-->
+		<adm_way isnull="N"  dict="adm_way" table="INPATIENT">admissionWay</adm_way><!--入院途径	字符型	1		Y	-->
+		<apgr isnull="N">0</apgr><!--评分值(Apgar)	字符型	2		Y	-->
+		<diet_info isnull="N">1</diet_info><!--饮食情况	字符型	1		Y	-->
+		<growth_deg isnull="N">1</growth_deg><!--发育程度	字符型	1		Y	-->
+		<mtl_stas_norm isnull="N" struct_id="HPI" dict="mtl_stas_norm"></mtl_stas_norm><!--精神状态正常标志	字符型	1		Y	-->
+		<slep_info isnull="N" struct_id="HPI" dict="slep_info"></slep_info><!--睡眠状况	字符型	1000		Y	-->
+		<sp_info isnull="N">无</sp_info><!--特殊情况	字符型	1000		Y	-->
+		<mind_info isnull="N">1</mind_info><!--心理状态	字符型	1		Y	-->
+		<nurt isnull="N">1</nurt><!--营养状态	字符型	1		Y	-->
+		<self_ablt isnull="N">1</self_ablt><!--自理能力	字符型	1		Y	-->
+		<nurscare_obsv_item_name isnull="N">无</nurscare_obsv_item_name><!--护理观察项目名称	字符型	30		Y	-->
+		<nurscare_obsv_rslt isnull="N">无</nurscare_obsv_rslt><!--护理观察结果	字符型	1000		Y	-->
+		<smoke isnull="N">0</smoke><!--吸烟标志	字符型	1		Y	-->
+		<stop_smok_days isnull="N">0</stop_smok_days><!--停止吸烟天数	数值型	5		Y	-->
+		<smok_info isnull="N">0</smok_info><!--吸烟状况	字符型	1		Y	-->
+		<smok_day isnull="N">0</smok_day><!--日吸烟量（支）	字符型	3		Y	-->
+		<drnk isnull="N">0</drnk><!--饮酒标志	字符型	1		Y	-->
+		<drnk_frqu isnull="N">0</drnk_frqu><!--饮酒频率	字符型	1		Y	-->
+		<drnk_day isnull="N">0</drnk_day><!--日饮酒量（mL）	数值型	3		Y	-->
+		<eval_time isnull="N">0</eval_time><!--评估日期时间	数值型			Y	-->
+		<resp_nurs_name isnull="N" table="INPATIENT">nurse</resp_nurs_name><!--责任护士姓名	字符型	50		Y	-->
+		<vali_flag isnull="N">1</vali_flag><!--有效标志	字符型	3	Y	Y	-->
+	</adminfo>
+	<!-- 表 224 输入-诊断信息（节点标识：diseinfo） -->
+	<diseinfo>
+		<inout_diag_type isnull="N" table="INPDIAG" dict="inout_diag_type"></inout_diag_type>	<!--出入院诊断类别	字符型	3	Y	Y-->
+		<maindiag_flag isnull="N">0</maindiag_flag>	<!--主诊断标志	字符型	3		Y-->
+		<diag_seq isnull="N" >1</diag_seq>	<!--诊断序列号	数值型	2		Y-->
+		<diag_time isnull="N" table="INPDIAG" type="date"  format="yyyy-MM-dd HH:mm:ss">createTime</diag_time>	<!--诊断时间	日期时间型			Y-->
+		<wm_diag_code></wm_diag_code>		<!--西医诊断编码	字符型	20		N-->
+		<wm_diag_name></wm_diag_name>		<!--西医诊断名称	字符型	100		N-->
+		<tcm_dise_code></tcm_dise_code>		<!--中医病名代码	字符型	9		N-->
+		<tcm_dise_name></tcm_dise_name>		<!--中医病名	字符型	100		N-->
+		<tcmsymp_code></tcmsymp_code>		<!--中医证候代码	字符型	9		N-->
+		<tcmsymp></tcmsymp>		<!--中医证候	字符型	100		N-->
+		<vali_flag isnull="N">1</vali_flag>		<!--有效标志	字符型	3	Y	Y-->
+	</diseinfo>
+	<!-- 表 225 输入-病程记录（节点标识：coursrinfo） -->
+	<coursrinfo>
+		<codse_rcd_id isnull="N"></codse_rcd_id>
+		<dept_code table="INPATIENT" dict="caty" isnull="N">deptCode</dept_code><!--科室代码 字符型 30 -->
+		<dept_name table="INPATIENT" isnull="N">deptName</dept_name><!--科室名称 字符型 30 -->
+		<wardarea_name table="INPATIENT" isnull="N">wardName</wardarea_name><!--病区名称 字符型 50 -->
+		<bedno table="INPATIENT" isnull="N">bedNo</bedno><!--病床号 字符型 10 -->
+		<rcd_time table="PROGRESSNOTE" type="date" format="yyyy-MM-dd HH:mm:ss">pnDateTime</rcd_time>	<!--记录日期时间 日期型 -->
+		<chfcomp struct_id="PN_CHIEF_COMPLAINT" length="30"></chfcomp><!--主诉 100 Y -->
+	    <cas_ftur struct_id="PN_SCBCJL"  isnull="N" dict="isnotnull"></cas_ftur><!--病例特点 200 Y -->
+	    <tcm4d_rslt struct_id="FOURDIAGMETHODS"></tcm4d_rslt><!--中医“四诊”观察结果 1000  -->
+	    <dise_evid struct_id="DIAGNOSTIC_BASIS" isnull="N" dict="isnotnull" length="33"></dise_evid><!--诊断依据 100 Y -->
+	    <prel_wm_diag_code ></prel_wm_diag_code><!--初步诊断-西医诊断编码 20  -->
+	    <prel_wm_dise_name ></prel_wm_dise_name><!--初步诊断-西医诊断名称 100  -->
+	     <prel_tcm_diag_code ></prel_tcm_diag_code><!--初步诊断-中医病名代码 20  -->
+	    <prel_tcm_dise_name   ></prel_tcm_dise_name><!--初步诊断-中医病名 200  -->
+		<prel_tcmsymp_code   ></prel_tcmsymp_code><!--初步诊断-中医证候代码 9  -->
+	    <prel_tcmsymp   ></prel_tcmsymp><!--初步诊断-中医证候 200  -->
+	    <finl_wm_diag_code   ></finl_wm_diag_code><!--鉴别诊断-西医诊断编码 20  -->
+	    <finl_wm_diag_name   ></finl_wm_diag_name><!--鉴别诊断-西医诊断名称 100  -->
+	    <finl_tcm_dise_code   ></finl_tcm_dise_code><!--鉴别诊断-中医病名代码 9  -->
+	    <finl_tcm_dise_name   ></finl_tcm_dise_name><!--鉴别诊断-中医病名 200  -->
+	    <finl_tcmsymp_code   ></finl_tcmsymp_code><!--鉴别诊断-中医证候代码 9  -->
+	    <finl_tcmsymp   ></finl_tcmsymp><!--鉴别诊断-中医证候 200  -->
+		<dise_plan struct_id="TREATMENT_PLAN"  isnull="N"  dict="isnotnull"></dise_plan><!--诊疗计划 1000 Y -->
+		<prnp_trt   ></prnp_trt><!--治则治法 100  -->
+	    <ipdr_code table="PROGRESSNOTE" isnull="N">creator</ipdr_code><!--住院医师编号 字符型 30 -->
+		<ipdr_name table="PROGRESSNOTE" isnull="N">creatorName</ipdr_name><!--住院医师编号 字符型 50 -->
+		<prnt_doc_name table="PROGRESSNOTE" >higherName</prnt_doc_name><!--上级医师姓名 字符型 50 -->
+		<vali_flag isnull="N">1</vali_flag>	<!--有效标志 字符型 3 Y Y -->
+	</coursrinfo>
+	<!-- 表 226 输入-手术记录（节点标识：oprninfo） -->
+	<oprninfo>
+		<oprn_appy_id table="OPERATIONINFOREC"  isnull="N" dict="caty">operaSn</oprn_appy_id><!--手术申请单号 字符型 30 -->
+	    <oprn_seq isnull="N"></oprn_seq><!--手术序列号  16  -->
+		<blotype_abo table="PATIENT" isnull="N" dict="blotype_abo_code">bloodType</blotype_abo><!--ABO血型代 字符型 2 -->
+		<oprn_time table="OPERATIONINFOREC" isnull="N" type="date" format="yyyy-MM-dd">operationTime</oprn_time>	<!--手术日期 日期型 -->
+		<oprn_type_code isnull="N">1</oprn_type_code><!--手术分类代码 字符型 1 -->
+	    <oprn_type_name ></oprn_type_name><!--手术分类名称 20  -->
+	    <bfpn_diag_code></bfpn_diag_code><!--术前诊断代码 100  -->
+	    <bfpn_oprn_diag_name></bfpn_oprn_diag_name><!--术前诊断名称  500  -->
+		<bfpn_inhosp_ifet dict="dict"></bfpn_inhosp_ifet><!--术前是否发生院内感染 10 字典 -->
+  	    <afpn_diag_code></afpn_diag_code><!--术后诊断代码 100  -->
+	    <afpn_diag_name></afpn_diag_name><!--术后诊断名称  500  -->
+		<sinc_heal_lv_code  table="OPERATIONINFOREC"   dict="dict">healGradeCode</sinc_heal_lv_code><!--愈合等级代码  5 字典 -->
+		<sinc_heal_lv table="OPERATIONINFOREC">healGrade</sinc_heal_lv><!--手术切口愈合等级 30 -->
+  	    <back_oprn></back_oprn><!--是否重返手术（明确定义） 2  -->
+  	    <selv></selv><!--术是否择期   2  -->
+  	    <prev_abtl_medn isnull="N" >0</prev_abtl_medn><!--是否预防使用抗菌药物  2  必填Y空-->
+  	    <abtl_medn_days ></abtl_medn_days><!--预防使用抗菌药物天数  10-->
+  	    <oprn_oprt_code table="OPERATIONINFOREC" isnull="N" >operationCode</oprn_oprt_code><!--手术操作代码 字符型 30 -->
+	    <oprn_oprt_name table="OPERATIONINFOREC"  isnull="N" >operationName</oprn_oprt_name><!--手手术操作名称 500  -->
+	    <oprn_lv_code table="OPERATIONINFOREC" >operationLevelCode</oprn_lv_code><!--手术级别代码 字符型 10 -->
+	    <oprn_lv_name table="OPERATIONINFOREC" >operationLevel</oprn_lv_name><!--手术级别名称 字符型300 -->
+	    <anst_mtd_code table="OPERATIONINFOREC" dict="anst_mtd_code">anesthesia</anst_mtd_code><!--麻醉-方法代码 字符型5 -->
+	    <anst_mtd_name table="OPERATIONINFOREC">anesthesia</anst_mtd_name><!--麻醉-方法 字符型50-->	    
+	    <anst_lv_code table="OPERATIONINFOREC"  dict="isnotnull"></anst_lv_code><!--麻醉分级代码 字符型10 -->
+	    <anst_lv_name table="OPERATIONINFOREC"></anst_lv_name><!--麻醉分级名称-方法 字符型50-->
+  	    <exe_anst_dept_code   dict="dict"></exe_anst_dept_code><!--麻醉执行科室代码 字符型30 参照科室代码（dept） -->
+  	    <exe_anst_dept_name   ></exe_anst_dept_name><!--麻醉执行科室名称 字符型50 -->
+  	    <anst_efft   ></anst_efft><!--麻醉效果 100  -->
+  	    <oprn_begntime table="OPERATIONINFOREC" type="date" isnull="N"  format="yyyy-MM-dd HH:mm:ss">operationStartTime</oprn_begntime>	<!--手术开始时间 日期型 -->
+  	    <oprn_endtime table="OPERATIONINFOREC" type="date" isnull="N"  format="yyyy-MM-dd HH:mm:ss">operationEndTime</oprn_endtime>	<!--手术结束时间 日期型 -->
+  	    <oprn_asps   ></oprn_asps><!--是否无菌手术 字符型2 -->
+  	    <oprn_asps_ifet   ></oprn_asps_ifet><!--无菌手术是否感染 字符型2 -->  	     
+  	    <afpn_info   ></afpn_info><!--手术后情况   字符型5000 -->
+  	    <oprn_merg   ></oprn_merg><!--是否手术合并症   字符型10 -->
+  	    <oprn_conc   ></oprn_conc><!--是否手术并发症   字符型10 -->
+  	    <oprn_anst_dept_code  table="OPERATIONINFOREC"  >deptCode</oprn_anst_dept_code><!--手术执行科室代码    字符型30 -->
+  	    <oprn_anst_dept_name  table="OPERATIONINFOREC"  >deptCode</oprn_anst_dept_name><!--手术执行科室名称   字符型50 -->
+  	    <palg_dise   ></palg_dise><!--病理检查   字符型500 -->
+   	    <oth_med_dspo   ></oth_med_dspo><!--其他医学处置   字符型4000 -->
+   	    <out_std_oprn_time   ></out_std_oprn_time><!--是否超出标准手术时间   字符型2 -->
+	    <oprn_oper_name table="OPERATIONINFOREC"  >operationDoctor</oprn_oper_name><!--手术者姓名  字符型50-->
+	    <oprn_asit_name1 table="OPERATIONINFOREC"  >assistantI</oprn_asit_name1><!--助手I姓名  字符型50-->
+ 	    <oprn_asit_name2 table="OPERATIONINFOREC"  >assistantII</oprn_asit_name2><!--助手II姓名  字符型50-->
+ 	    <anst_dr_name table="OPERATIONINFOREC"  >anesthesiaDoctor</anst_dr_name><!--麻醉医师姓名  字符型50-->
+ 	    <anst_asa_lv_code table="OPERATIONINFOREC"  >asaLevelCode</anst_asa_lv_code><!--麻醉医师姓名  字符型50-->
+ 	    <anst_asa_lv_name table="OPERATIONINFOREC"  >asaLevelName</anst_asa_lv_name><!--麻醉医师姓名  字符型50-->		
+		<anst_asa_lv_code table="OPERATIONINFOREC"  >asaLevelCode</anst_asa_lv_code><!--麻醉ASA分级代码  字符型50-->
+ 	    <anst_medn_code dict="dict"></anst_medn_code><!--麻醉药物代码  字符型50-->
+  	    <anst_medn_name></anst_medn_name><!--麻醉药物名称   字符型100 -->
+  	    <anst_medn_dos></anst_medn_dos><!--麻醉药物剂量  字符型20 -->
+  	    <anst_dosunt></anst_dosunt><!--计量单位  字符型10 --> 
+   	    <anst_begntime></anst_begntime><!--麻醉开始时间  字符型14 -->
+  	    <anst_endtime></anst_endtime><!--麻醉结束时间  字符型14 -->
+  	    <anst_merg_symp_code></anst_merg_symp_code><!--麻醉合并症代码  字符型10 -->
+  	    <anst_merg_symp></anst_merg_symp><!--麻醉合并症名称  字符型100 --> 	       	     
+  	    <anst_merg_symp_dscr></anst_merg_symp_dscr><!--麻醉合并症描述  字符型1K --> 	     
+  	    <pacu_begntime></pacu_begntime><!--入复苏室时间 字符型14 --> 	     
+  	    <pacu_endtime></pacu_endtime><!--出复苏室时间  字符型14 --> 	 	     
+ 	    <oprn_selv></oprn_selv><!--是否择期手术  字符型50-->
+ 	    <canc_oprn></canc_oprn><!--是否择取消手术  字符型50-->  	          
+		<vali_flag isnull="N">1</vali_flag>	<!--有效标志 字符型 3 Y Y -->
+	</oprninfo>
+	<!-- 表 227 输入-病情抢救记录（节点标识：rescinfo） -->
+	<rescinfo>
+		<resc_id isnull="N"></resc_id>
+        <dept table="INPATIENT"  dict="caty" isnull="N">deptCode</dept><!--科室代码 字符型 30 -->
+		<dept_name table="INPATIENT" isnull="N">deptName</dept_name><!--科室名称 字符型 30 -->
+		<wardarea_name table="INPATIENT" isnull="N">wardName</wardarea_name><!--病区名称 字符型 50 -->
+		<bedno table="INPATIENT" isnull="N">bedNo</bedno><!--病床号 字符型 10 -->	
+		<diag_name table="INPATIENT" isnull="N" >principalDiagnosis</diag_name><!--诊断名称  -->
+	    <diag_code table="INPATIENT" isnull="N" >principalDiagnosisCode</diag_code><!--诊断代码  -->
+	     <cond_chg struct_id="A350E6D7A9724AE6972214AAE8BF54E5" isnull="N"  ></cond_chg><!--病情变化情况  -->
+	    <resc_mes struct_id="BB3E315A263B4774A57694366E413585"  isnull="N" ></resc_mes><!--抢救措施  -->
+		<oprn_oprt_code struct_id="" isnull="N"  >无</oprn_oprt_code><!--手术操作代码  -->
+	    <oprn_oprt_name struct_id=""  isnull="N" >无</oprn_oprt_name><!--手术操作名称  -->	
+		<oprn_oper_part struct_id="" isnull="N"  >无</oprn_oper_part><!--手术及操作目标部位名称  -->
+	    <itvt_name struct_id=""  isnull="N" >无</itvt_name><!--介入物名称  -->
+	    <oprt_mtd struct_id="" isnull="N"  >无</oprt_mtd><!--操作方法  -->oprn_oprt_code
+	    <itvt_name struct_id="" type="number"  isnull="N" >无</itvt_name><!--操作次数  -->
+		<resc_begntime struct_id=""  isnull="N" type="date" format="yyyy-MM-dd HH:mm:ss"></resc_begntime>	<!--抢救开始日期时间 -->
+		<resc_endtime struct_id=""  isnull="N" type="date" format="yyyy-MM-dd HH:mm:ss"></resc_endtime>	<!--抢救结束日期时间 -->
+		<dise_item_name struct_id=""  isnull="N" >无</dise_item_name><!--检查/检验项目名称  -->
+		<dise_ccls struct_id=""  isnull="N" >无</dise_ccls><!--检查/检验结果  -->
+	    <dise_ccls_qunt struct_id="" type="number"   isnull="N" >0.0</dise_ccls_qunt><!--检查/检验定量结果  -->
+	    <dise_ccls_code struct_id=""  isnull="N" >1</dise_ccls_code><!--检查/检验结果代码  -->
+	    <mnan struct_id=""  isnull="N" >无</mnan><!--注意事项  -->
+	    <resc_psn_list struct_id="CA3C45F76172412B8F4F649D1E363F02"  isnull="N" ></resc_psn_list><!--参加抢救人员名单  -->
+	    <proftechttl_code  isnull="N" >1</proftechttl_code><!--专业技术职务类别代码  -->
+		<doc_code table="PROGRESSNOTE"  isnull="N">creator</doc_code><!--医师编号  -->
+		<dr_name table="PROGRESSNOTE"  isnull="N">creatorName</dr_name><!--医师姓名  -->
+		<vali_flag isnull="N">1</vali_flag>	<!--有效标志 字符型 3 Y Y -->
+	</rescinfo>
+	<!-- 表 228 输入-死亡记录（节点标识：dieinfo） -->
+	<dieinfo>
+		<dept table="INPATIENT" dict="caty" isnull="N">deptCode</dept><!--科室代码 字符型 30 -->
+  <dept_name table="INPATIENT" isnull="N">deptName</dept_name><!--科室名称 字符型 30 -->
+  <wardarea_name table="INPATIENT" isnull="N">wardName</wardarea_name><!--病区名称 字符型 50 -->
+  <bedno table="INPATIENT" isnull="N">bedNo</bedno><!--病床号 字符型 10 -->
+  <adm_time table="INPATIENT" isnull="N"  type="date" format="yyyy-MM-dd HH:mm:ss">admissionTime</adm_time> <!--入院时间 日期型 -->
+  <adm_dise table="INPATIENT" isnull="N" >principalDiagnosisCode</adm_dise><!--入院诊断编码 100  -->
+  <adm_info struct_id="ADMISSION_STATE" isnull="N" length="33"  dict="isnotnull"></adm_info><!--入院情况 100  -->
+  <trt_proc_dscr struct_id="TREAT_PROCESS" isnull="N"  dict="isnotnull"></trt_proc_dscr><!--诊疗过程描述  -->
+  <die_time table="DEATHREC" type="date"  isnull="N"  format="yyyy-MM-dd HH:mm:ss">deathDateTime</die_time> <!--死亡时间 日期型 -->
+  <die_drt_rea isnull="N"  dict="isnotnull" ></die_drt_rea><!--直接死亡原因名称  -->
+  <die_drt_rea_code isnull="N"  dict="isnotnull"></die_drt_rea_code><!--直接死亡原因编码  -->
+  <die_dise_name  isnull="N"  dict="isnotnull"></die_dise_name><!--死亡诊断名称  -->
+  <die_diag_code isnull="N" dict="isnotnull" ></die_diag_code><!--死亡诊断编码  -->
+  <agre_corp_dset  isnull="N">0</agre_corp_dset><!--家属是否同意尸体解剖标志  -->
+  <ipdr_name table="INPATIENT" isnull="N"  >doctor</ipdr_name><!--住院医师姓名  -->
+  <chfpdr_code table="INPATIENT"  isnull="N"  >doctorID</chfpdr_code><!--主诊医师代码  -->
+  <chfpdr_name table="INPATIENT"  isnull="N"  >doctor</chfpdr_name><!--主诊医师姓名  -->
+  <chfdr_name table="INPATIENT"  isnull="N"  >doctor</chfdr_name><!--主任医师姓名  -->
+  <sign_time table="DEATHREC" type="date" isnull="N"  format="yyyy-MM-dd HH:mm:ss">createTime</sign_time> <!--记录日期时间 日期型 -->
+  <vali_flag isnull="N">1</vali_flag> <!--有效标志 字符型 3 Y Y -->
+	</dieinfo>
+	<!-- 表 229 输入-出院小结（节点标识：dscginfo） -->
+	<dscginfo>
+	 	<dscg_date table="INPATIENT" type="date" format="yyyy-MM-dd HH:mm:ss" isnull="N">hospitalDischargeTime</dscg_date>	<!--出院日期时间 日期型 -->	
+		<adm_diag_dscr struct_id="18C87D2B552142A1B2AF4F0F0E4B8CE2"  ></adm_diag_dscr><!--入院诊断描述 100  -->
+		<dscg_dise_dscr struct_id="5B6FEBF9F19040599CCAA204188F581E"  ></dscg_dise_dscr><!--出院诊断描述 100  -->
+		<adm_info struct_id="ADMISSION_STATE" ></adm_info><!--入院情况 Y -->
+        <trt_proc_rslt_dscr struct_id="TREAT_PROCESS" ></trt_proc_rslt_dscr><!--诊治经过及结果（含手术日期名称及结果） -->
+        <dscg_info struct_id="DISCHARGE_STATE" ></dscg_info><!--出院情况（含治疗效果）-->
+        <dscg_drord struct_id="DISCHARGE_ORDER;CD82603F859041A3A964E2D2AF8DD95E" ></dscg_drord><!--出院医嘱-->
+        <caty table="INPATIENT" dict="caty" isnull="N" >deptCode</caty><!--科别 30 -->
+		<rec_doc table="DISCHARGESUMMARY">creator</rec_doc><!--记录医生-->
+		<main_drug_name struct_id="" ></main_drug_name><!--主要药品名称-->
+		<oth_imp_info struct_id=" " ></oth_imp_info><!--其他重要信息-->
+		<vali_flag isnull="N">1</vali_flag>	<!--有效标志 字符型 3 Y Y -->
+	</dscginfo>
+</Config>

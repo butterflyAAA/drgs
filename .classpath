@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/7z.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/c3p0-0.9.2.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ht.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htdb-db.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/HTEditor.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/htdto.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ojdbc5.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/orai18n-mapping.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/orai18n.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/xdb.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/axis.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/register.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/wsdl4j.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/emConfigInstall.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/fastjson-2.0.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/fastjson2-2.0.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/fastjson2-extension-2.0.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/apache-tomcat-7.0.109"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
+</classpath>

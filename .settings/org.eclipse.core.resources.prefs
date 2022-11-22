@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/com/haitaiinc=UTF-8
+encoding//src/com/haitaiinc/hisdb/dictmanage=UTF-8
+encoding//src/com/haitaiinc/hisdb/dictmanage/tableadapters=UTF-8
+encoding//src/com/haitaiinc/hisdb/drgs=UTF-8
+encoding//src/com/haitaiinc/hisdb/drgs/tableadapters=UTF-8
+encoding//src/com/haitaiinc/hisdb/his=UTF-8
+encoding//src/com/haitaiinc/service/FixmedinsMedrcdInfoService.java=GBK
+encoding//src/com/haitaiinc/service/FrontSheetService.java=GBK
+encoding//src/com/haitaiinc/service/MedicalOrderService.java=GBK
+encoding/<project>=UTF-8

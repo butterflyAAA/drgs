@@ -1,0 +1,81 @@
+create or replace view v_patientinfo as
+select b.PAT_ID as PID,
+          nvl(( case when fun_parsejson(b.ybkh,'ybkxx') is null
+           then (nvl((
+           case  when instr(b.ybkh,':')>1 then fun_col_split(b.ybkh,2,':')
+           when instr(b.ybkh,'|')>1 then fun_col_split(b.ybkh,3,'|')
+          when instr(b.ybkh,'ybkxx')>1 then ''
+          else b.ybkh end ),''))
+           else (
+            case  when instr(fun_parsejson(b.ybkh,'ybkxx'),':')>1 then fun_col_split(fun_parsejson(b.ybkh,'ybkxx'),2,':')
+           when instr(fun_parsejson(b.ybkh,'ybkxx'),'|')>1 then fun_col_split(fun_parsejson(b.ybkh,'ybkxx'),3,'|')
+           else ''  end
+           ) end),b.JZKH) as INSURANCE_NO,
+           b.PAT_NAME as PATIENT_NAME,
+          '正式' as TMP_FLAG,
+          '' as LASTNAME,
+          '' as FIRSTNAME,
+          b.PYM as PY,
+          dictmanage.fungetwubi(b.PAT_NAME) as WB,
+          b.XB_ID as SEX_CODE,
+          b.xb as SEX,
+           to_char(b.CS_RQ,'yyyymmdd') as DATA_OF_BIRTH,
+           ''as TIME_OF_BIRTH,
+          b.HY_ID as MARRIAGE_STATUS_CODE  ,
+           b.hyzk as MARRIAGE_STATUS,
+           case b.ZY_ID when '11' then '19'  when '17' then 'Z1'  WHEN '24' THEN '70' WHEN '27' THEN '71' WHEN '31' THEN 'B0' WHEN '37' THEN 'A0'  WHEN '54' THEN '16' WHEN '80' THEN 'AA' ELSE 'X0' END as OCCUPATION_CODE,
+           b.zy_mc as OCCUPATION,
+           b.emr_mz as NATIONALITY_CODE,
+           b.mz_mc as NATIONALITY,
+           b.GJ_ID as COUNTRY_CODE,
+           gj.gj_mc as Country,
+           ''as FORMAL_SCHOOLING_CODE,
+           '' as FORMAL_SCHOOLING,
+           '' as RELIGION,--宗教信仰
+           b.JG_ID as BIRTHPLACE_CODE,
+           b.jg_mc as BIRTHPLACE,
+           b.jg_id as NATIVE_PLACE_CODE,
+           b.jg_mc as NATIVE_PLACE,
+           case b.ZJLX_ID when '01' then '1' when '03' then '2' when '04'  then '3'  else '4' end as CERT_TYPE_CODE,
+            case b.ZJLX_ID when '01' then '身份证' when '03' then '护照' when '04'  then '军官证'  else '其他' end as CERT_TYPE,
+           b.ZJ_HM as CERT_NO,
+           b.brfl as PATIENT_CLASS_CODE,
+           b.brxz_mc as PATIENT_CLASS,
+           '' as FEE_TYPE_CODE,
+           '' as FEE_TYPE,
+           nvl(b.GZ_DW,'-') as COMPANY,
+           '' as PUBLIC_EXPENSE_NO,
+           '-' as CONTRACT_UNIT_CODE,
+           b.GZ_DW as CONTRACT_UNIT,
+           '-' as BUSINESS_ADDRESS_CODE,
+           '-'as BUSINESS_ADDRESS,
+           '-' as BUSINESS_POSTCODE,
+           nvl(b.DW_DH,'-') as BUSINESS_PHONE,
+           '-' as HOME_ADDRESS_CODE,
+           b.JT_DZ as HOME_ADDRESS,
+           substrb(b.JT_dh,0,15) as MOBILE_PHONE,
+           b.LXR as CONTACT,
+           b.GX_ID as RELATION_CODE,
+           b.rygx_mc as RELATION,
+           '-' as CONTACT_EMAIL,
+           b.LXR_DH  as CONTACT_PHONE,
+          '-' as VIP_TYPE,
+          b.CJR as OPERATOR_ID,
+          b.cjr1 as OPERATOR,
+          to_char(sysdate,'yyyymmddhh24miss') as OPERATOR_TIME ,
+           'Y' as Available,
+           b.PAT_XZID as INSURANCE_TYPE_CODE,
+           b.brxz_mc as INSURANCE_TYPE,
+           b.JG_ID as REGISTERED_ADDRESS_CODE,
+           b.jg_mc as  REGISTERED_ADDRESS ,
+           '-'as CONTACT_ADDRESS_CODE,
+           '-'as  CONTACT_ADDRESS ,
+           nvl(b.hk_yb,'-') as REGISTERED_EMAIL ,
+           nvl(b.jt_yb,'-') as HOME_POSTCODE,
+           nvl(b.XX_ID,'9') as BLOOD_TYPE,
+           '4' as RH_BLOOD_TYPE,
+           c.orgid
+ from
+            v_patinfo b,dictmanage.dict_nation gj,dictmanage.dict_hospinfo c
+ where
+     b.GJ_ID = gj.gj_id(+);

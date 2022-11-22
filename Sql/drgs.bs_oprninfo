@@ -1,0 +1,185 @@
+-- Create table
+create table DRGS.BS_OPRNINFO
+(
+  oprn_oprt_date      DATE,
+  oprn_oprt_name      VARCHAR2(500),
+  oprn_oprt_code      VARCHAR2(30),
+  oprn_oprt_sn        VARCHAR2(16),
+  oprn_lv_code        VARCHAR2(50),
+  oprn_lv_name        VARCHAR2(300),
+  oper_name           VARCHAR2(50),
+  asit1_name          VARCHAR2(50),
+  asit2_name          VARCHAR2(50),
+  sinc_heal_lv        VARCHAR2(30),
+  sinc_heal_lv_code   VARCHAR2(5),
+  anst_mtd_name       VARCHAR2(50),
+  anst_mtd_code       VARCHAR2(5),
+  anst_dr_name        VARCHAR2(50),
+  oprn_oper_part      VARCHAR2(10),
+  oprn_oper_part_code VARCHAR2(30),
+  oprn_con_time       VARCHAR2(3),
+  anst_lv_name        VARCHAR2(50),
+  anst_lv_code        VARCHAR2(30),
+  oprn_patn_type      VARCHAR2(100),
+  oprn_patn_type_code VARCHAR2(30),
+  main_oprn_flag      VARCHAR2(30),
+  anst_asa_lv_code    VARCHAR2(50),
+  anst_asa_lv_name    VARCHAR2(100),
+  anst_medn_code      VARCHAR2(50),
+  anst_medn_name      VARCHAR2(100),
+  anst_medn_dos       VARCHAR2(20),
+  unt                 VARCHAR2(10),
+  anst_begntime       DATE,
+  anst_endtime        DATE,
+  anst_copn_code      VARCHAR2(30),
+  anst_copn_name      VARCHAR2(100),
+  anst_copn_dscr      VARCHAR2(1000),
+  pacu_begntime       DATE,
+  pacu_endtime        DATE,
+  canc_oprn_flag      VARCHAR2(3),
+  vali_flag           VARCHAR2(3) not null,
+  ipt_medcas_hmpg_sn  VARCHAR2(30),
+  mdtrt_sn            VARCHAR2(30),
+  brxh                NUMBER not null,
+  sxh                 NUMBER not null,
+  oper_code           VARCHAR2(50),
+  anst_dr_code        VARCHAR2(50),
+  asit2_code          VARCHAR2(50),
+  asit1_code          VARCHAR2(50),
+  oprn_oprt_type      VARCHAR2(3),
+  jgdm                VARCHAR2(50) not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column DRGS.BS_OPRNINFO.oprn_oprt_date
+  is '手术操作日期';
+comment on column DRGS.BS_OPRNINFO.oprn_oprt_name
+  is '手术操作名称';
+comment on column DRGS.BS_OPRNINFO.oprn_oprt_code
+  is '手术操作代码';
+comment on column DRGS.BS_OPRNINFO.oprn_oprt_sn
+  is '手术操作序列号';
+comment on column DRGS.BS_OPRNINFO.oprn_lv_code
+  is '手术级别代码';
+comment on column DRGS.BS_OPRNINFO.oprn_lv_name
+  is '手术级别名称';
+comment on column DRGS.BS_OPRNINFO.oper_name
+  is '手术者姓名';
+comment on column DRGS.BS_OPRNINFO.asit1_name
+  is '助手Ⅰ姓名';
+comment on column DRGS.BS_OPRNINFO.asit2_name
+  is '助手Ⅱ姓名';
+comment on column DRGS.BS_OPRNINFO.sinc_heal_lv
+  is '手术切口愈合等级';
+comment on column DRGS.BS_OPRNINFO.sinc_heal_lv_code
+  is '手术切口愈合等级代码';
+comment on column DRGS.BS_OPRNINFO.anst_mtd_name
+  is '麻醉-方法名称';
+comment on column DRGS.BS_OPRNINFO.anst_mtd_code
+  is '麻醉-方法代码';
+comment on column DRGS.BS_OPRNINFO.anst_dr_name
+  is '麻醉医师姓名';
+comment on column DRGS.BS_OPRNINFO.oprn_oper_part
+  is '手术操作部位';
+comment on column DRGS.BS_OPRNINFO.oprn_oper_part_code
+  is '手术操作部位代码';
+comment on column DRGS.BS_OPRNINFO.oprn_con_time
+  is '手术持续时间';
+comment on column DRGS.BS_OPRNINFO.anst_lv_name
+  is '麻醉分级名称';
+comment on column DRGS.BS_OPRNINFO.anst_lv_code
+  is '麻醉分级代码';
+comment on column DRGS.BS_OPRNINFO.oprn_patn_type
+  is '手术患者类型';
+comment on column DRGS.BS_OPRNINFO.oprn_patn_type_code
+  is '手术患者类型代码';
+comment on column DRGS.BS_OPRNINFO.main_oprn_flag
+  is '主要手术标志';
+comment on column DRGS.BS_OPRNINFO.anst_asa_lv_code
+  is '麻醉ASA分级代码';
+comment on column DRGS.BS_OPRNINFO.anst_asa_lv_name
+  is '麻醉ASA分级名称';
+comment on column DRGS.BS_OPRNINFO.anst_medn_code
+  is '麻醉药物代码';
+comment on column DRGS.BS_OPRNINFO.anst_medn_name
+  is '麻醉药物名称';
+comment on column DRGS.BS_OPRNINFO.anst_medn_dos
+  is '麻醉药物剂量';
+comment on column DRGS.BS_OPRNINFO.unt
+  is '计量单位';
+comment on column DRGS.BS_OPRNINFO.anst_begntime
+  is '麻醉开始时间';
+comment on column DRGS.BS_OPRNINFO.anst_endtime
+  is '麻醉结束时间';
+comment on column DRGS.BS_OPRNINFO.anst_copn_code
+  is '麻醉合并症代码';
+comment on column DRGS.BS_OPRNINFO.anst_copn_name
+  is '麻醉合并症名称';
+comment on column DRGS.BS_OPRNINFO.anst_copn_dscr
+  is '麻醉合并症描述';
+comment on column DRGS.BS_OPRNINFO.pacu_begntime
+  is '复苏室开始时间';
+comment on column DRGS.BS_OPRNINFO.pacu_endtime
+  is '复苏室结束时间';
+comment on column DRGS.BS_OPRNINFO.canc_oprn_flag
+  is '取消手术标志';
+comment on column DRGS.BS_OPRNINFO.vali_flag
+  is '有效标志';
+comment on column DRGS.BS_OPRNINFO.ipt_medcas_hmpg_sn
+  is '住院病案首页流水号';
+comment on column DRGS.BS_OPRNINFO.mdtrt_sn
+  is '就医流水号';
+comment on column DRGS.BS_OPRNINFO.brxh
+  is '病人序号';
+comment on column DRGS.BS_OPRNINFO.sxh
+  is '顺序号';
+comment on column DRGS.BS_OPRNINFO.oper_code
+  is '手术者代码';
+comment on column DRGS.BS_OPRNINFO.anst_dr_code
+  is '麻醉医师代码';
+comment on column DRGS.BS_OPRNINFO.asit2_code
+  is '助手Ⅰ代码';
+comment on column DRGS.BS_OPRNINFO.asit1_code
+  is '助手Ⅱ代码';
+comment on column DRGS.BS_OPRNINFO.oprn_oprt_type
+  is '手术操作类别';
+comment on column DRGS.BS_OPRNINFO.jgdm
+  is '院区ID';
+-- Create/Recreate indexes 
+create index IDX_OPIPT_NO on DRGS.BS_OPRNINFO (IPT_MEDCAS_HMPG_SN)
+  tablespace HISSPACES
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table DRGS.BS_OPRNINFO
+  add constraint PK_BS_OPRNINFO primary key (BRXH, SXH, JGDM)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );

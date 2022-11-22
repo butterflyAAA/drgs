@@ -1,0 +1,32 @@
+-- Create table
+create table DICTMANAGE.TPL_TEMPLATE
+(
+  tpl_id       VARCHAR2(100) not null,
+  tpl_version  VARCHAR2(30),
+  tpl_name     VARCHAR2(100),
+  tpl_name_py  VARCHAR2(100),
+  tpl_desc     VARCHAR2(100),
+  tpl_data     CLOB,
+  tpl_status   VARCHAR2(20),
+  tree_node    VARCHAR2(100),
+  node_index   NUMBER(38),
+  creator      VARCHAR2(30),
+  create_time  VARCHAR2(14),
+  modifier     VARCHAR2(30),
+  modify_time  VARCHAR2(14),
+  owner_org    VARCHAR2(100),
+  inout_flag   VARCHAR2(10),
+  tpl_type     VARCHAR2(10),
+  tpl_use_type VARCHAR2(10)
+)
+tablespace DICTSPACES
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 16K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  );

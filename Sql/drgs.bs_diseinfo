@@ -1,0 +1,117 @@
+-- Create table
+create table DRGS.BS_DISEINFO
+(
+  palg_no                     VARCHAR2(30),
+  ipt_patn_disediag_type_code VARCHAR2(30) not null,
+  disediag_type               VARCHAR2(100),
+  maindiag_flag               VARCHAR2(3),
+  diag_code                   VARCHAR2(20),
+  diag_name                   VARCHAR2(100),
+  inhosp_diag_code            VARCHAR2(20),
+  inhosp_diag_name            VARCHAR2(100),
+  adm_dise_cond_name          VARCHAR2(300),
+  adm_dise_cond_code          VARCHAR2(20),
+  adm_cond                    VARCHAR2(500),
+  adm_cond_code               VARCHAR2(3),
+  high_diag_evid              VARCHAR2(30),
+  bkup_deg                    VARCHAR2(16),
+  bkup_deg_code               VARCHAR2(30),
+  vali_flag                   VARCHAR2(3) default '1' not null,
+  ipt_medcas_hmpg_sn          VARCHAR2(30),
+  mdtrt_sn                    VARCHAR2(30),
+  fixmedins_code              VARCHAR2(12),
+  brxh                        NUMBER not null,
+  sxh                         NUMBER not null,
+  diag_type                   VARCHAR2(3),
+  jgdm                        VARCHAR2(50) not null
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column DRGS.BS_DISEINFO.palg_no
+  is '病理号';
+comment on column DRGS.BS_DISEINFO.ipt_patn_disediag_type_code
+  is '住院患者疾病诊断类型代码';
+comment on column DRGS.BS_DISEINFO.disediag_type
+  is '疾病诊断类型';
+comment on column DRGS.BS_DISEINFO.maindiag_flag
+  is '主诊断标志';
+comment on column DRGS.BS_DISEINFO.diag_code
+  is '诊断代码';
+comment on column DRGS.BS_DISEINFO.diag_name
+  is '诊断名称';
+comment on column DRGS.BS_DISEINFO.inhosp_diag_code
+  is '院内诊断代码';
+comment on column DRGS.BS_DISEINFO.inhosp_diag_name
+  is '院内诊断名称';
+comment on column DRGS.BS_DISEINFO.adm_dise_cond_name
+  is '入院疾病病情名称';
+comment on column DRGS.BS_DISEINFO.adm_dise_cond_code
+  is '"入院疾病病情代码  1有
+2临床未确定
+3情况不明
+4无
+"';
+comment on column DRGS.BS_DISEINFO.adm_cond
+  is '入院病情';
+comment on column DRGS.BS_DISEINFO.adm_cond_code
+  is '入院时病情代码';
+comment on column DRGS.BS_DISEINFO.high_diag_evid
+  is '最高诊断依据';
+comment on column DRGS.BS_DISEINFO.bkup_deg
+  is '分化程度';
+comment on column DRGS.BS_DISEINFO.bkup_deg_code
+  is '分化程度代码';
+comment on column DRGS.BS_DISEINFO.vali_flag
+  is '有效标志';
+comment on column DRGS.BS_DISEINFO.ipt_medcas_hmpg_sn
+  is '住院病案首页流水号';
+comment on column DRGS.BS_DISEINFO.mdtrt_sn
+  is '就医流水号  定点医药机构编号+院内唯一流水号';
+comment on column DRGS.BS_DISEINFO.fixmedins_code
+  is '定点医药机构编号';
+comment on column DRGS.BS_DISEINFO.brxh
+  is '病人序号';
+comment on column DRGS.BS_DISEINFO.sxh
+  is '顺序号';
+comment on column DRGS.BS_DISEINFO.diag_type
+  is '诊断类别';
+comment on column DRGS.BS_DISEINFO.jgdm
+  is '院区ID';
+-- Create/Recreate indexes 
+create index IDX_IPTNO on DRGS.BS_DISEINFO (IPT_MEDCAS_HMPG_SN)
+  tablespace HISSPACES
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table DRGS.BS_DISEINFO
+  add constraint PK_BS_DISEINFO primary key (BRXH, SXH, JGDM, IPT_PATN_DISEDIAG_TYPE_CODE)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );

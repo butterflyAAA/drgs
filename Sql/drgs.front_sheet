@@ -1,0 +1,43 @@
+-- Create table
+create table DRGS.FRONT_SHEET
+(
+  ipid        VARCHAR2(20) not null,
+  pid         VARCHAR2(20),
+  xml_cont    SYS.XMLTYPE,
+  dept_name   VARCHAR2(100),
+  dept_code   VARCHAR2(20),
+  ward_name   VARCHAR2(100),
+  ward_code   VARCHAR2(20),
+  create_time VARCHAR2(14),
+  creator     VARCHAR2(30),
+  modify_time VARCHAR2(14),
+  modifier    VARCHAR2(30),
+  tpl_id      VARCHAR2(100),
+  tpl_version VARCHAR2(30)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 16K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table DRGS.FRONT_SHEET
+  add constraint FRONTSHEETIPID primary key (IPID)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );

@@ -1,0 +1,436 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>日期选择</title>
+<link href='../css/font.css' rel='stylesheet' type='text/css'>
+<link rel=stylesheet type=text/css href="../css/ht.css">
+<link rel=stylesheet type=text/css href="../css/theme_bluewater.css">
+<script language="javascript" src="Basic.js"></script>
+<script>
+var gdCtrl = new Object();
+var goSelectTag = new Array();
+var gcGray = "#808080";
+var gcToggle = "url(../images/date/date_today_bg.jpg)";
+//var gcBG = "#99CCFF";
+var gcBG = "url(../images/date/date_day_bg.jpg)";
+var previousObject = null;
+var gobj = new Array();
+var gdCurDate = new Date();
+var giYear = gdCurDate.getFullYear();
+var giMonth = gdCurDate.getMonth()+1;
+var giDay = gdCurDate.getDate();
+var oldObjId = null;
+
+var gCalMode = "";
+var gCalDefDate = "";
+
+var CAL_MODE_NOBLANK = "2";
+	function fSetDate(iYear, iMonth, iDay){
+	  //VicPopCal.style.visibility = "hidden";
+	  if ((iYear == 0) && (iMonth == 0) && (iDay == 0)){
+	  	gdCtrl.value = "";
+	  }else{
+	  	iMonth = iMonth + 100 + "";
+	  	iMonth = iMonth.substring(1);
+	  	iDay   = iDay + 100 + "";
+	  	iDay   = iDay.substring(1);
+	  	gdCtrl.value = iYear+"-"+iMonth+"-"+iDay;
+	  }
+	  for (i in goSelectTag)
+	  	goSelectTag[i].style.visibility = "visible";
+	  goSelectTag.length = 0;
+
+	  document.all.mydate.value=gdCtrl.value;
+	}
+
+	function HiddenDiv()
+	{
+		var i;
+	  VicPopCal.style.visibility = "hidden";
+	  for (i in goSelectTag)
+	  	goSelectTag[i].style.visibility = "visible";
+	  goSelectTag.length = 0;
+
+	}
+
+	function notShowColor(objS){
+		for(var i=0;objS != null && i<objS.length;i++){
+			objS[i].style.background = gcBG;
+			objS[i].old = gcBG;
+		}
+	}
+	
+	function fSetSelected(aCell){
+	  var iOffset = 0;
+	  notShowColor(gobj);
+	  var iYear = parseInt(tbSelYear.value);
+	  var iMonth = parseInt(tbSelMonth.value);
+	  aCell.old = gcToggle;
+	  aCell.style.background = gcToggle;
+	  with (aCell.children["cellText"]){
+	  	var iDay = parseInt(innerText);
+	  	if (color==gcGray)
+			iOffset = (Victor<10)?-1:1;
+
+		/*** below temp patch by maxiang ***/
+		if( color == gcGray ){
+			iOffset = (iDay < 15 )?1:-1;
+		}
+		/*** above temp patch by maxiang ***/
+
+		iMonth += iOffset;
+		if (iMonth<1) {
+			iYear--;
+			iMonth = 12;
+		}else if (iMonth>12){
+			iYear++;
+			iMonth = 1;
+		}
+	  }
+	  fSetDate(iYear, iMonth, iDay);
+	}
+
+	function Point(iX, iY){
+		this.x = iX;
+		this.y = iY;
+	}
+
+	function fBuildCal(iYear, iMonth) {
+	  var aMonth=new Array();
+	  for(i=1;i<7;i++)
+	  	aMonth[i]=new Array(i);
+
+	  var dCalDate=new Date(iYear, iMonth-1, 1);
+	  var iDayOfFirst=dCalDate.getDay();
+	  var iDaysInMonth=new Date(iYear, iMonth, 0).getDate();
+	  var iOffsetLast=new Date(iYear, iMonth-1, 0).getDate()-iDayOfFirst+1;
+	  var iDate = 1;
+	  var iNext = 1;
+
+	  for (d = 0; d < 7; d++)
+		aMonth[1][d] = (d<iDayOfFirst)?-(iOffsetLast+d):iDate++;
+	  for (w = 2; w < 7; w++)
+	  	for (d = 0; d < 7; d++)
+			aMonth[w][d] = (iDate<=iDaysInMonth)?iDate++:-(iNext++);
+	  return aMonth;
+	}
+
+	function fDrawCal(iYear, iMonth, iCellHeight, sDateTextSize) {
+	  var WeekDay = new Array("日","一","二","三","四","五","六");
+	  var styleTD = " style='border:1 solid #cccccc"+"' background='../images/date/date_day_bg.jpg"+"' background='"+gcBG+"' valign='middle' align='center' height='"+iCellHeight+"' style='font-size:14px; ";
+
+	  with (document) {
+		write("<tr>");
+		for(i=0; i<7; i++)
+			write("<td style='border:0 none;padding-top:5px;"+"' background='../images/date/date_week_bg.jpg"+"'"+styleTD+" color:#3F4A54' ><b>" + WeekDay[i] + "</b></td>");
+		write("</tr>");
+
+	  	for (w = 1; w < 7; w++) {
+			write("<tr>");
+			for (d = 0; d < 7; d++) {
+				//write("<td  bgcolor='#ffffff' id='calCell' "+styleTD+"cursor:hand;' old='"+gcBG+"' onMouseOver='this.bgColor=gcToggle' onMouseOut='this.bgColor=this.old' onclick='fSetSelected(this)'>");
+				write("<td  bgcolor='#ffffff' id='calCell' "+styleTD+"cursor:hand;' old='"+gcBG+"' onMouseOver='this.style.background=\"url(../images/date/date_over_bg.jpg)\"' onMouseOut='this.style.background=this.old' onclick='fSetSelected(this)'>");
+				write("<font id=cellText ><b> </b></font>");
+				write("</td>")
+			}
+			write("</tr>");
+		}
+	  }
+	}
+
+	function fUpdateCal(iYear, iMonth) {
+	  myMonth = fBuildCal(iYear, iMonth);
+	  var iOffset = 0;
+	  var i = 0;
+	  for (w = 0; w < 6; w++)
+		for (d = 0; d < 7; d++)
+			with (cellText[(7*w)+d]) {
+				Victor = i++;
+			  var iYear = parseInt(tbSelYear.value);
+			  var iMonth = parseInt(tbSelMonth.value);
+				if (myMonth[w+1][d]<0) {
+					color = gcGray;
+					innerText = -myMonth[w+1][d];
+					iOffset = (Victor<10)?-1:1;
+					iOffset = (innerText < 15 )?1:-1;
+					iMonth += iOffset;
+					if (iMonth<1) {
+						iYear--;
+						iMonth = 12;
+					}else if (iMonth>12){
+						iYear++;
+						iMonth = 1;
+					}
+				}else{
+					// Modified by maxiang for we need
+					// Saturday displayed in blue font color.
+					//color = ((d==0)||(d==6))?"red":"black";
+					if( d == 0 ){
+						color = "red";
+					}else if( d == 6 ){
+						color = "green";
+					}else{
+						color = "black";
+					}
+					// End of above maxiang
+					innerText = myMonth[w+1][d];
+				}
+				parentNode.id = "calCell"+iYear;
+				if(iMonth<10){
+					parentNode.id += "0";
+				}
+				parentNode.id += iMonth;
+				if(parseInt(innerText)<10){
+					parentNode.id += "0";
+				}
+				parentNode.id += innerText;
+				gobj[gobj.length]=parentNode;
+				if(parentNode.id==oldObjId){
+					parentNode.old = gcToggle;
+					parentNode.style.background = gcToggle;
+				}
+				else{
+					parentNode.old = gcBG;
+					parentNode.style.background = gcBG;
+				}
+			}
+	}
+
+	function fSetYearMon(iYear, iMon){
+	  tbSelMonth.options[iMon-1].selected = true;
+	  for (i = 0; i < tbSelYear.length; i++)
+		if (tbSelYear.options[i].value == iYear)
+			tbSelYear.options[i].selected = true;
+	  fUpdateCal(iYear, iMon);
+	}
+
+	function fPrevMonth(){
+	  var iMon = tbSelMonth.value;
+	  var iYear = tbSelYear.value;
+
+	  if (--iMon<1) {
+		  iMon = 12;
+		  iYear--;
+	  }
+	  fSetYearMon(iYear, iMon);
+	}
+
+	function fNextMonth(){
+	  var iMon = tbSelMonth.value;
+	  var iYear = tbSelYear.value;
+
+	  if (++iMon>12) {
+		  iMon = 1;
+		  iYear++;
+	  }
+	  fSetYearMon(iYear, iMon);
+	}
+
+	function fToggleTags(){
+	  with (document.all.tags("SELECT")){
+	 	for (i=0; i<length; i++)
+	 		if ((item(i).Victor!="Won")&&fTagInBound(item(i))){
+	 			item(i).style.visibility = "hidden";
+	 			goSelectTag[goSelectTag.length] = item(i);
+	 		}
+	  }
+	}
+
+	function fTagInBound(aTag){
+	  with (VicPopCal.style){
+	  	var l = parseInt(left);
+	  	var t = parseInt(top);
+	  	var r = l+parseInt(width);
+	  	var b = t+parseInt(height);
+		var ptLT = fGetXY(aTag);
+		return !((ptLT.x>r)||(ptLT.x+aTag.offsetWidth<l)||(ptLT.y>b)||(ptLT.y+aTag.offsetHeight<t));
+	  }
+	}
+
+	function fGetXY(aTag){
+	  var oTmp = aTag;
+	  var pt = new Point(0,0);
+	  do {
+	  	pt.x += oTmp.offsetLeft;
+	  	pt.y += oTmp.offsetTop;
+	  	oTmp = oTmp.offsetParent;
+	  } while(oTmp.tagName!="BODY");
+	  return pt;
+	}
+
+	// Main: popCtrl is the widget beyond which you want this calendar to appear;
+//	       dateCtrl is the widget into which you want to put the selected date.
+	// i.e.: <input type="text" name="dc" style="text-align:center" readonly><INPUT type="button" value="V" onclick="fPopCalendar(dc,dc);return false">
+	function fPopCalendar(popCtrl, dateCtrl, mode, defDate){
+		gCalMode = mode;
+		gCalDefDate = defDate;
+
+	  if (popCtrl == previousObject){
+		  	if (VicPopCal.style.visibility == "visible"){
+	  		//HiddenDiv();
+	  		return true;
+	  	}
+
+	  }
+	  previousObject = popCtrl;
+	  gdCtrl = dateCtrl;
+	  //fSetYearMon(giYear, giMonth);
+	  var point = fGetXY(popCtrl);
+
+		if( gCalMode == CAL_MODE_NOBLANK ){
+			document.all.CAL_B_BLANK.style.visibility = "hidden";
+		}else{
+			document.all.CAL_B_BLANK.style.visibility = "visible";
+		}
+
+	  with (VicPopCal.style) {
+	  	left = point.x;
+			top  = point.y+popCtrl.offsetHeight;
+			width = VicPopCal.offsetWidth;
+			height = VicPopCal.offsetHeight;
+			fToggleTags(point);
+			visibility = 'visible';
+	  }
+	}
+
+	var gMonths = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
+
+function fload()
+{
+	fPopCalendar(document.all.txt1, document.all.txt1);
+}
+function returnVal(){
+	  if ( (document.all.hour.value=="")||(document.all.minute.value=="") ){
+	    alert("请输入时间！");
+	    return false;
+	  }
+	  if(!checknumxx(document.all.hour.value,0,23)){
+	    alert("输入的小时数不正确，请重输！");
+	    return false;
+	  }
+	  else{
+			var temp = document.all.hour.value;
+			temp="0"+temp;
+			document.all.hour.value=temp.substring(temp.length-2);
+	  }
+	  if(!checknumxx(document.all.minute.value,0,59)){
+	    alert("输入的分钟数不正确，请重输！");
+	    return false;
+	  }
+	  else{
+			var temp = document.all.minute.value;
+			temp="0"+temp;
+			document.all.minute.value=temp.substring(temp.length-2);
+	  }
+	 if ( document.all.mydate.value=="" ){
+	    alert("请选择日期！");
+	    return false;
+	  }
+	 window.returnValue = document.all.mydate.value+" "+document.all.hour.value+":"+document.all.minute.value;
+	 window.close();
+	 
+	  //return document.all.mydate.value+" "+document.all.hour.value+":"+document.all.minute.value;
+	}
+
+</script>
+<script defer="defer">
+function fkeydown()
+{
+	if(event.keyCode==27){
+		event.returnValue = null;
+		window.returnValue = null;
+		window.close();
+	}
+}
+document.onkeydown=fkeydown;
+</script>
+</head>
+<body onLoad="fload()">
+<div id='VicPopCal' style='OVERFLOW: hidden; POSITION: absolute; VISIBILITY: ; border: 0px ridge; width: 100%; height: 100%; top: 0; left: 0; z-index: 100; overflow: hidden; background-color: #FFFFFF;'>
+  <table width="219" border='0' align='center' cellpadding="0" cellspacing="0" bgcolor='#ffffff'>
+    <tr>
+      <td height="34" align='center' valign='top' background="../images/date/date_top_bg.png" style="padding-top:5px;">
+        <table border="0" cellpadding="0" cellspacing="0" >
+          <tr>
+            <td width="30">
+            <input type='button' name='PrevMonth' value='  ' style='width: 22; height: 23; padding: 0px; margin: 0px; background-image: url(../images/date/date_top_left.png); border: 0px; cursor: hand; background-repeat: no-repeat;' onclick='fPrevMonth()'>
+            </td>
+            <td>
+            <SELECT name="tbSelYear" onChange="fUpdateCal(tbSelYear.value, tbSelMonth.value)" Victor="Won" style="height:24px">
+			<script>
+				for(i=1880;i<2020;i++){
+					document.write("<option value='"+i+"'>"+i+"年</option>");
+				}
+			</script>
+			</SELECT>
+            </td>
+            <td>
+            <SELECT  name="tbSelMonth" onChange="fUpdateCal(tbSelYear.value, tbSelMonth.value)" Victor="Won" style="height:24px">
+			  <script>
+                for (i=0; i<12; i++){
+					document.write("<option value='"+(i+1)+"'>"+gMonths[i]+"</option>");
+				}
+			  </script>
+			</SELECT >
+            </td>
+            <td width="30" align="right"><input type='button' name='PrevMonth' value='  ' style='width: 22; height: 23; padding: 0px; margin: 0px; background-image: url(../images/date/date_top_right.png); border: 0px; cursor: hand; background-repeat: no-repeat;' onclick='fNextMonth()'>
+            </td>
+		  </tr>
+		</table>				
+	  </td>
+	</tr>
+	<tr>
+				<td align='center'>
+				<div style="background-image:url(../images/date/date_body_bg.png)">
+				<table align="center" width='211' border='0' cellpadding='1' cellspacing='0' style="border:1 solid #5795BD; border-top:0 none; border-bottom:0 none;">
+				<script>
+				fDrawCal(giYear, giMonth, 23, '12');
+				</script>
+				</table>
+				</div>
+				</td>
+			</tr>
+			<tr>
+				<td height="25" align="center" background="../images/date/date_bottom_bg.png" style="padding-top:3px;"><input type="hidden" name="mydate" size="20">时：<input type="text" name="hour" size="4" style="border:1 solid #cccccc; background-image:url(../images/date/date_time_bg.jpg)"> &nbsp;分： <input
+					type="text" name="minute" size="4" style="border:1 solid #cccccc; background-image:url(../images/date/date_time_bg.jpg)"></td>
+		  </tr>
+			<tr>
+				<td  align="center" style="background-image:url(../images/date/date_bottom_bg2.png); background-position:bottom; padding-top:3px; padding-bottom:13px;" >
+				<input type='button' name='btn_blank' value='确 定' id="CAL_B_BLANK" onclick='returnVal();return false;' class="f" style="margin-top:0px;">
+				<input type='button' name='btn_close' value='关 闭' onclick='window.close();' class="f">
+                </td>
+		  </tr>
+  </table>
+</div>
+<input type=text id="txt1" style="display:none">
+</body>
+<script type="text/javascript" defer="defer">
+var arg = window.dialogArguments;
+function loadFunc(arg){
+	if(arg&&arg.defvalue){
+		if(arg.defvalue.length==14){
+			var defvalue = new String();
+			defvalue = arg.defvalue;
+			document.all.mydate.value=defvalue.substring(0, 4)+"-"+defvalue.substring(4, 6)+"-"+defvalue.substring(6, 8);
+			document.all.hour.value=defvalue.substring(8, 10);
+			document.all.minute.value=defvalue.substring(10, 12);
+			oldObjId = "calCell"+defvalue.substring(0, 8);
+			fSetYearMon(defvalue.substring(0, 4), defvalue.substring(4, 6));
+			return;
+		}
+	}
+	var objId = "calCell"+giYear;
+	if(giMonth<10){
+		objId += "0";
+	}
+	objId += giMonth;
+	if(giDay<10){
+		objId += "0";
+	}
+	objId += giDay;
+	oldObjId = objId;
+	fSetYearMon(giYear, giMonth);
+}
+loadFunc(arg);
+</script>
+</html>

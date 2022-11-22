@@ -1,0 +1,102 @@
+.bg{
+	background-color:#2690a8;
+   }
+.main_bg{
+	background-image:url(../images/dutyselect/bg.png);
+	background-repeat:no-repeat;
+}
+.button_back{
+	padding-top:8px;
+	width:auto;
+   } 
+    
+a.back{ 
+display:block;/*因为标签a是内链元素，所以利用这句话将内链元素转化成块状元素，后面的width和height才起作用*/ 
+width:156px; 
+height:32px; 
+margin:0 auto; 
+background:url(../images/dutyselect/back.png) no-repeat; 
+} 
+a.back:hover{background:url(../images/dutyselect/back_click.png) no-repeat;}
+a.back:active{background:url(../images/dutyselect/back_click.png) no-repeat;}
+
+.button_min{
+	padding-top:12px;
+	padding-right:4px;
+	width:32px;
+}
+a.min{ 
+display:block;
+width:32px; 
+height:32px; 
+margin:0 auto; 
+background:url(../images/dutyselect/minimize.png) no-repeat; 
+} 
+a.min:hover{background:url(../images/dutyselect/minimize_click.png) no-repeat;}
+a.min:active{background:url(../images/dutyselect/minimize_click.png) no-repeat;}
+
+.button_close{
+	padding-top:12px;
+	padding-right:19px;
+	width:32px;
+}
+a.close{ 
+display:block;
+width:32px; 
+height:32px; 
+margin:0 auto; 
+background:url(../images/dutyselect/close.png) no-repeat; 
+} 
+a.close:hover{background:url(../images/dutyselect/close_click.png) no-repeat;}
+a.close:active{background:url(../images/dutyselect/close_click.png) no-repeat;}
+
+.main_window{
+   background-image:url(../images/dutyselect/main.png);
+   background-repeat:no-repeat;
+   background-position:center top;
+}
+.ico{
+	height:43px;
+	width:60px;
+	padding-left:87px;
+   }
+.icotext{  
+	font-family:"黑体";
+	font-size:20px;
+	color:#000000;  
+	vertical-align: bottom;
+   }
+.line{
+	background-image:url(../images/dutyselect/line.png);
+	background-repeat:no-repeat;
+	height:10px;
+}
+.button_last{
+   padding-right:4px;
+   padding-bottom:25px;
+   width:35px;
+   height:36px;
+}
+a.last{ 
+display:block;
+width:35px; 
+height:36px; 
+background:url(../images/dutyselect/last.png) no-repeat; 
+} 
+a.last:hover{background:url(../images/dutyselect/last_click.png) no-repeat;}
+a.last:active{background:url(../images/dutyselect/last_click.png) no-repeat;}
+
+.button_next{
+   padding-right:27px;
+   padding-bottom:25px;
+   width:35px;
+   height:36px;
+}
+a.next{ 
+display:block;
+width:35px; 
+height:36px; 
+background:url(../images/dutyselect/next.png) no-repeat; 
+} 
+a.next:hover{background:url(../images/dutyselect/next_click.png) no-repeat;}
+a.next:active{background:url(../images/dutyselect/next_click.png) no-repeat;}

@@ -1,0 +1,500 @@
+-- Create table
+create table DRGS.BS_BASEINFO
+(
+  mdtrt_sn                   VARCHAR2(30),
+  mdtrt_id                   VARCHAR2(30),
+  psn_no                     VARCHAR2(30),
+  patn_ipt_cnt               VARCHAR2(50),
+  ipt_no                     VARCHAR2(30),
+  medcasno                   VARCHAR2(40),
+  psn_name                   VARCHAR2(50),
+  gend                       VARCHAR2(6),
+  brdy                       DATE,
+  ntly                       VARCHAR2(6),
+  ntly_name                  VARCHAR2(70),
+  nwb_bir_wt                 NUMBER,
+  nwb_adm_wt                 NUMBER,
+  birplc                     VARCHAR2(200),
+  napl                       VARCHAR2(100),
+  naty_name                  VARCHAR2(100),
+  naty                       VARCHAR2(3),
+  certno                     VARCHAR2(50),
+  prfs                       VARCHAR2(6),
+  mrg_stas                   VARCHAR2(3),
+  curr_addr_poscode          VARCHAR2(6),
+  curr_addr                  VARCHAR2(200),
+  psn_tel                    VARCHAR2(70),
+  resd_addr_prov             VARCHAR2(30),
+  resd_addr_city             VARCHAR2(500),
+  resd_addr_coty             VARCHAR2(500),
+  resd_addr_subd             VARCHAR2(500),
+  resd_addr_vil              VARCHAR2(500),
+  resd_addr_housnum          VARCHAR2(200),
+  resd_addr_poscode          VARCHAR2(30),
+  resd_addr                  VARCHAR2(200),
+  empr_tel                   VARCHAR2(20),
+  empr_poscode               VARCHAR2(6),
+  empr_addr                  VARCHAR2(200),
+  coner_tel                  VARCHAR2(50),
+  coner_name                 VARCHAR2(50),
+  coner_addr                 VARCHAR2(200),
+  coner_rlts_code            VARCHAR2(20),
+  adm_way_name               VARCHAR2(300),
+  adm_way_code               VARCHAR2(3),
+  trt_type_name              VARCHAR2(300),
+  trt_type                   VARCHAR2(3),
+  adm_caty                   VARCHAR2(6),
+  adm_ward                   VARCHAR2(50),
+  adm_date                   DATE,
+  dscg_date                  DATE,
+  dscg_caty                  VARCHAR2(6),
+  refldeptcatyname           VARCHAR2(50),
+  dscg_ward                  VARCHAR2(50),
+  ipt_days                   NUMBER,
+  drug_dicm_flag             VARCHAR2(30),
+  dicm_drug_name             VARCHAR2(200),
+  die_autp_flag              VARCHAR2(30),
+  abo_code                   VARCHAR2(30),
+  abo_name                   VARCHAR2(30),
+  rh_code                    VARCHAR2(30),
+  rh_name                    VARCHAR2(30),
+  die_flag                   VARCHAR2(3),
+  deptdrt_name               VARCHAR2(50),
+  chfdr_name                 VARCHAR2(50),
+  atddr_name                 VARCHAR2(50),
+  chfpdr_name                VARCHAR2(50),
+  ipt_dr_name                VARCHAR2(50),
+  resp_nurs_name             VARCHAR2(50),
+  train_dr_name              VARCHAR2(50),
+  intn_dr_name               VARCHAR2(50),
+  codr_name                  VARCHAR2(50),
+  qltctrl_dr_name            VARCHAR2(50),
+  qltctrl_nurs_name          VARCHAR2(50),
+  medcas_qlt_name            VARCHAR2(100),
+  medcas_qlt_code            VARCHAR2(30),
+  qltctrl_date               DATE,
+  dscg_way_name              VARCHAR2(200),
+  dscg_way                   VARCHAR2(3),
+  acp_medins_code            VARCHAR2(50),
+  acp_medins_name            VARCHAR2(500),
+  dscg_31days_rinp_flag      VARCHAR2(3),
+  dscg_31days_rinp_pup       VARCHAR2(200),
+  damg_intx_ext_rea          VARCHAR2(1000),
+  damg_intx_ext_rea_disecode VARCHAR2(30),
+  brn_damg_bfadm_coma_dura   VARCHAR2(15),
+  brn_damg_afadm_coma_dura   VARCHAR2(15),
+  vent_used_dura             VARCHAR2(10),
+  cnfm_date                  DATE,
+  patn_dise_diag_crsp        VARCHAR2(100),
+  patn_dise_diag_crsp_code   VARCHAR2(50),
+  ipt_patn_diag_inscp        VARCHAR2(20),
+  ipt_patn_diag_inscp_code   VARCHAR2(1),
+  dscg_trt_rslt              VARCHAR2(4),
+  dscg_trt_rslt_code         VARCHAR2(30),
+  medins_orgcode             VARCHAR2(50),
+  age                        NUMBER,
+  aise                       VARCHAR2(30),
+  pote_intn_dr_name          VARCHAR2(50),
+  hbsag                      VARCHAR2(30),
+  hcvab                      VARCHAR2(30),
+  hivab                      VARCHAR2(30),
+  resc_cnt                   NUMBER,
+  resc_succ_cnt              NUMBER,
+  hosp_dise_fsttime          VARCHAR2(30),
+  hif_pay_way_name           VARCHAR2(20),
+  hif_pay_way_code           VARCHAR2(2),
+  med_fee_paymtd_name        VARCHAR2(200),
+  medfee_paymtd_code         VARCHAR2(3),
+  selfpay_amt                NUMBER,
+  medfee_sumamt              NUMBER,
+  ordn_med_servfee           NUMBER,
+  ordn_trt_oprt_fee          NUMBER,
+  nurs_fee                   NUMBER,
+  com_med_serv_oth_fee       NUMBER,
+  palg_diag_fee              NUMBER,
+  lab_diag_fee               NUMBER,
+  rdhy_diag_fee              NUMBER,
+  clnc_dise_fee              NUMBER,
+  nsrgtrt_item_fee           NUMBER,
+  clnc_phys_trt_fee          NUMBER,
+  rgtrt_trt_fee              NUMBER,
+  anst_fee                   NUMBER,
+  oprn_fee                   NUMBER,
+  rhab_fee                   NUMBER,
+  tcm_trt_fee                NUMBER,
+  wmfee                      NUMBER,
+  abtl_medn_fee              NUMBER,
+  tcmpat_fee                 NUMBER,
+  tcmherb_fee                NUMBER,
+  blo_fee                    NUMBER,
+  albu_fee                   NUMBER,
+  glon_fee                   NUMBER,
+  clotfac_fee                NUMBER,
+  cyki_fee                   NUMBER,
+  exam_dspo_matl_fee         NUMBER,
+  trt_dspo_matl_fee          NUMBER,
+  oprn_dspo_matl_fee         NUMBER,
+  oth_fee                    NUMBER,
+  vali_flag                  VARCHAR2(3),
+  fixmedins_code             VARCHAR2(12),
+  scsj                       DATE,
+  flag                       NUMBER,
+  czy                        VARCHAR2(20),
+  brxh                       NUMBER not null,
+  chfdr_code                 VARCHAR2(255),
+  atddr_code                 VARCHAR2(255),
+  ipt_dr_code                VARCHAR2(255),
+  resp_nurs_code             VARCHAR2(255),
+  train_dr_code              VARCHAR2(255),
+  intn_dr_code               VARCHAR2(255),
+  codr_code                  VARCHAR2(255),
+  qltctrl_dr_code            VARCHAR2(255),
+  qltctrl_nurs_code          VARCHAR2(255),
+  deptdrt_code               VARCHAR2(255),
+  otp_wm_dise                VARCHAR2(50),
+  wm_dise_code               VARCHAR2(20),
+  otpcmdise                  VARCHAR2(20),
+  tcmdisecode                VARCHAR2(50),
+  refldept_dept              VARCHAR2(100),
+  jgdm                       VARCHAR2(50) not null,
+  ybzffs                     NUMBER(2)
+)
+tablespace USERS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column DRGS.BS_BASEINFO.mdtrt_sn
+  is '就医流水号 定点医药机构编号+院内唯一流水号';
+comment on column DRGS.BS_BASEINFO.mdtrt_id
+  is '就诊ID';
+comment on column DRGS.BS_BASEINFO.psn_no
+  is '人员编号';
+comment on column DRGS.BS_BASEINFO.patn_ipt_cnt
+  is '患者住院次数';
+comment on column DRGS.BS_BASEINFO.ipt_no
+  is '住院号';
+comment on column DRGS.BS_BASEINFO.medcasno
+  is '病案号';
+comment on column DRGS.BS_BASEINFO.psn_name
+  is '人员姓名';
+comment on column DRGS.BS_BASEINFO.gend
+  is '性别';
+comment on column DRGS.BS_BASEINFO.brdy
+  is '出生日期';
+comment on column DRGS.BS_BASEINFO.ntly
+  is '国籍';
+comment on column DRGS.BS_BASEINFO.ntly_name
+  is '国籍名称';
+comment on column DRGS.BS_BASEINFO.nwb_bir_wt
+  is '新生儿出生体重';
+comment on column DRGS.BS_BASEINFO.nwb_adm_wt
+  is '新生儿入院体重';
+comment on column DRGS.BS_BASEINFO.birplc
+  is '出生地';
+comment on column DRGS.BS_BASEINFO.napl
+  is '籍贯';
+comment on column DRGS.BS_BASEINFO.naty_name
+  is '民族名称';
+comment on column DRGS.BS_BASEINFO.naty
+  is '民族';
+comment on column DRGS.BS_BASEINFO.certno
+  is '证件号码';
+comment on column DRGS.BS_BASEINFO.prfs
+  is '职业';
+comment on column DRGS.BS_BASEINFO.mrg_stas
+  is '婚姻状态';
+comment on column DRGS.BS_BASEINFO.curr_addr_poscode
+  is '现住址-邮政编码';
+comment on column DRGS.BS_BASEINFO.curr_addr
+  is '现住址';
+comment on column DRGS.BS_BASEINFO.psn_tel
+  is '个人联系电话';
+comment on column DRGS.BS_BASEINFO.resd_addr_prov
+  is '户口地址-省（自治区、直辖市）';
+comment on column DRGS.BS_BASEINFO.resd_addr_city
+  is '户口地址-市（地区）';
+comment on column DRGS.BS_BASEINFO.resd_addr_coty
+  is '户口地址-县（区）';
+comment on column DRGS.BS_BASEINFO.resd_addr_subd
+  is '户口地址-乡（镇、街道办事处）';
+comment on column DRGS.BS_BASEINFO.resd_addr_vil
+  is '户口地址-村（街、路、弄等）';
+comment on column DRGS.BS_BASEINFO.resd_addr_housnum
+  is '户口地址-门牌号码';
+comment on column DRGS.BS_BASEINFO.resd_addr_poscode
+  is '户口地址- 邮政编码';
+comment on column DRGS.BS_BASEINFO.resd_addr
+  is '户口地址';
+comment on column DRGS.BS_BASEINFO.empr_tel
+  is '工作单位联系电话';
+comment on column DRGS.BS_BASEINFO.empr_poscode
+  is '工作单位- 邮政编码';
+comment on column DRGS.BS_BASEINFO.empr_addr
+  is '工作单位及地址';
+comment on column DRGS.BS_BASEINFO.coner_tel
+  is '联系人电话';
+comment on column DRGS.BS_BASEINFO.coner_name
+  is '联系人姓名';
+comment on column DRGS.BS_BASEINFO.coner_addr
+  is '联系人地址';
+comment on column DRGS.BS_BASEINFO.coner_rlts_code
+  is '与联系人关系代码';
+comment on column DRGS.BS_BASEINFO.adm_way_name
+  is '入院途径名称';
+comment on column DRGS.BS_BASEINFO.adm_way_code
+  is '入院途径代码';
+comment on column DRGS.BS_BASEINFO.trt_type_name
+  is '治疗类别名称';
+comment on column DRGS.BS_BASEINFO.trt_type
+  is '治疗类别';
+comment on column DRGS.BS_BASEINFO.adm_caty
+  is '入院科别';
+comment on column DRGS.BS_BASEINFO.adm_ward
+  is '入院病房';
+comment on column DRGS.BS_BASEINFO.adm_date
+  is '入院日期';
+comment on column DRGS.BS_BASEINFO.dscg_date
+  is '出院日期';
+comment on column DRGS.BS_BASEINFO.dscg_caty
+  is '出院科别';
+comment on column DRGS.BS_BASEINFO.refldeptcatyname
+  is '转科科别名称';
+comment on column DRGS.BS_BASEINFO.dscg_ward
+  is '出院病房';
+comment on column DRGS.BS_BASEINFO.ipt_days
+  is '住院天数';
+comment on column DRGS.BS_BASEINFO.drug_dicm_flag
+  is '药物过敏标志';
+comment on column DRGS.BS_BASEINFO.dicm_drug_name
+  is '过敏药物名称';
+comment on column DRGS.BS_BASEINFO.die_autp_flag
+  is '死亡患者尸检标志';
+comment on column DRGS.BS_BASEINFO.abo_code
+  is 'ABO血型代码';
+comment on column DRGS.BS_BASEINFO.abo_name
+  is 'ABO血型名称';
+comment on column DRGS.BS_BASEINFO.rh_code
+  is 'Rh血型代码';
+comment on column DRGS.BS_BASEINFO.rh_name
+  is 'RH血型';
+comment on column DRGS.BS_BASEINFO.die_flag
+  is '死亡标志';
+comment on column DRGS.BS_BASEINFO.deptdrt_name
+  is '科主任姓名';
+comment on column DRGS.BS_BASEINFO.chfdr_name
+  is '主任( 副主任)医师姓名';
+comment on column DRGS.BS_BASEINFO.atddr_name
+  is '主治医生姓名';
+comment on column DRGS.BS_BASEINFO.chfpdr_name
+  is '主诊医师姓名';
+comment on column DRGS.BS_BASEINFO.ipt_dr_name
+  is '住院医师姓名';
+comment on column DRGS.BS_BASEINFO.resp_nurs_name
+  is '责任护士姓名';
+comment on column DRGS.BS_BASEINFO.train_dr_name
+  is '进修医师姓名';
+comment on column DRGS.BS_BASEINFO.intn_dr_name
+  is '实习医师姓名';
+comment on column DRGS.BS_BASEINFO.codr_name
+  is '编码员姓名';
+comment on column DRGS.BS_BASEINFO.qltctrl_dr_name
+  is '质控医师姓名';
+comment on column DRGS.BS_BASEINFO.qltctrl_nurs_name
+  is '质控护士姓名';
+comment on column DRGS.BS_BASEINFO.medcas_qlt_name
+  is '病案质量名称';
+comment on column DRGS.BS_BASEINFO.medcas_qlt_code
+  is '病案质量代码';
+comment on column DRGS.BS_BASEINFO.qltctrl_date
+  is '质控日期';
+comment on column DRGS.BS_BASEINFO.dscg_way_name
+  is '离院方式名称';
+comment on column DRGS.BS_BASEINFO.dscg_way
+  is '离院方式';
+comment on column DRGS.BS_BASEINFO.acp_medins_code
+  is '拟接收医疗机构代码';
+comment on column DRGS.BS_BASEINFO.acp_medins_name
+  is '拟接收医疗机构名称';
+comment on column DRGS.BS_BASEINFO.dscg_31days_rinp_flag
+  is '出院 31天内再住院计划标志';
+comment on column DRGS.BS_BASEINFO.dscg_31days_rinp_pup
+  is '出院31天内再住院目的';
+comment on column DRGS.BS_BASEINFO.damg_intx_ext_rea
+  is '损伤、中毒的外部原因';
+comment on column DRGS.BS_BASEINFO.damg_intx_ext_rea_disecode
+  is '损伤、中毒的外部原因疾病编码';
+comment on column DRGS.BS_BASEINFO.brn_damg_bfadm_coma_dura
+  is '颅脑损伤患者入院前昏迷时长';
+comment on column DRGS.BS_BASEINFO.brn_damg_afadm_coma_dura
+  is '颅脑损伤患者入院后昏迷时长';
+comment on column DRGS.BS_BASEINFO.vent_used_dura
+  is '呼吸机使用时长';
+comment on column DRGS.BS_BASEINFO.cnfm_date
+  is '确诊日期';
+comment on column DRGS.BS_BASEINFO.patn_dise_diag_crsp
+  is '患者疾病诊断对照';
+comment on column DRGS.BS_BASEINFO.patn_dise_diag_crsp_code
+  is '住院患者疾病诊断对照代码';
+comment on column DRGS.BS_BASEINFO.ipt_patn_diag_inscp
+  is '住院患者诊断符合情况';
+comment on column DRGS.BS_BASEINFO.ipt_patn_diag_inscp_code
+  is '住院患者诊断符合情况代码';
+comment on column DRGS.BS_BASEINFO.dscg_trt_rslt
+  is '出院治疗结果';
+comment on column DRGS.BS_BASEINFO.dscg_trt_rslt_code
+  is '出院治疗结果代码';
+comment on column DRGS.BS_BASEINFO.medins_orgcode
+  is '医疗机构组织机构代码';
+comment on column DRGS.BS_BASEINFO.age
+  is '年龄';
+comment on column DRGS.BS_BASEINFO.aise
+  is '过敏源';
+comment on column DRGS.BS_BASEINFO.pote_intn_dr_name
+  is '研究生实习医师姓名';
+comment on column DRGS.BS_BASEINFO.hbsag
+  is '乙肝表面抗原（HBsAg）';
+comment on column DRGS.BS_BASEINFO.hcvab
+  is '丙型肝炎抗体（HCV-Ab）';
+comment on column DRGS.BS_BASEINFO.hivab
+  is '艾滋病毒抗体（hiv-ab）';
+comment on column DRGS.BS_BASEINFO.resc_cnt
+  is '抢救次数';
+comment on column DRGS.BS_BASEINFO.resc_succ_cnt
+  is '抢救成功次数';
+comment on column DRGS.BS_BASEINFO.hosp_dise_fsttime
+  is '手术、治疗、检查、诊断为本院第一例';
+comment on column DRGS.BS_BASEINFO.hif_pay_way_name
+  is '医保基金付费方式名称';
+comment on column DRGS.BS_BASEINFO.hif_pay_way_code
+  is '医保基金付费方式代码';
+comment on column DRGS.BS_BASEINFO.med_fee_paymtd_name
+  is '医疗费用支付方式名称';
+comment on column DRGS.BS_BASEINFO.medfee_paymtd_code
+  is '医疗费用支付方式代码';
+comment on column DRGS.BS_BASEINFO.selfpay_amt
+  is '自付金额';
+comment on column DRGS.BS_BASEINFO.medfee_sumamt
+  is '医疗费总额';
+comment on column DRGS.BS_BASEINFO.ordn_med_servfee
+  is '一般医疗服务费';
+comment on column DRGS.BS_BASEINFO.ordn_trt_oprt_fee
+  is '一般治疗操作费';
+comment on column DRGS.BS_BASEINFO.nurs_fee
+  is '护理费';
+comment on column DRGS.BS_BASEINFO.com_med_serv_oth_fee
+  is '综合医疗服务类其他费用';
+comment on column DRGS.BS_BASEINFO.palg_diag_fee
+  is '病理诊断费';
+comment on column DRGS.BS_BASEINFO.lab_diag_fee
+  is '实验室诊断费';
+comment on column DRGS.BS_BASEINFO.rdhy_diag_fee
+  is '影像学诊断费';
+comment on column DRGS.BS_BASEINFO.clnc_dise_fee
+  is '临床诊断项目费';
+comment on column DRGS.BS_BASEINFO.nsrgtrt_item_fee
+  is '非手术治疗项目费';
+comment on column DRGS.BS_BASEINFO.clnc_phys_trt_fee
+  is '临床物理治疗费';
+comment on column DRGS.BS_BASEINFO.rgtrt_trt_fee
+  is '手术治疗费';
+comment on column DRGS.BS_BASEINFO.anst_fee
+  is '麻醉费';
+comment on column DRGS.BS_BASEINFO.oprn_fee
+  is '手术费';
+comment on column DRGS.BS_BASEINFO.rhab_fee
+  is '康复费';
+comment on column DRGS.BS_BASEINFO.tcm_trt_fee
+  is '中医治疗费';
+comment on column DRGS.BS_BASEINFO.wmfee
+  is '西药费';
+comment on column DRGS.BS_BASEINFO.abtl_medn_fee
+  is '抗菌药物费用';
+comment on column DRGS.BS_BASEINFO.tcmpat_fee
+  is '中成药费';
+comment on column DRGS.BS_BASEINFO.tcmherb_fee
+  is '中药饮片费';
+comment on column DRGS.BS_BASEINFO.blo_fee
+  is '血费';
+comment on column DRGS.BS_BASEINFO.albu_fee
+  is '白蛋白类制品费';
+comment on column DRGS.BS_BASEINFO.glon_fee
+  is '球蛋白类制品费';
+comment on column DRGS.BS_BASEINFO.clotfac_fee
+  is '凝血因子类制品费';
+comment on column DRGS.BS_BASEINFO.cyki_fee
+  is '细胞因子类制品费';
+comment on column DRGS.BS_BASEINFO.exam_dspo_matl_fee
+  is '检查用一次性医用材料费';
+comment on column DRGS.BS_BASEINFO.trt_dspo_matl_fee
+  is '治疗用一次性医用材料费';
+comment on column DRGS.BS_BASEINFO.oprn_dspo_matl_fee
+  is '手术用一次性医用材料费';
+comment on column DRGS.BS_BASEINFO.oth_fee
+  is '其他费';
+comment on column DRGS.BS_BASEINFO.vali_flag
+  is '有效标志';
+comment on column DRGS.BS_BASEINFO.fixmedins_code
+  is '定点医药机构编号';
+comment on column DRGS.BS_BASEINFO.scsj
+  is '上传时间';
+comment on column DRGS.BS_BASEINFO.flag
+  is '上传标志';
+comment on column DRGS.BS_BASEINFO.czy
+  is '操作员';
+comment on column DRGS.BS_BASEINFO.brxh
+  is '病人序号';
+comment on column DRGS.BS_BASEINFO.chfdr_code
+  is '主任医师代码';
+comment on column DRGS.BS_BASEINFO.atddr_code
+  is '主治医生代码';
+comment on column DRGS.BS_BASEINFO.ipt_dr_code
+  is '住院医师代码';
+comment on column DRGS.BS_BASEINFO.resp_nurs_code
+  is '责任护士代码';
+comment on column DRGS.BS_BASEINFO.train_dr_code
+  is '进修医师代码';
+comment on column DRGS.BS_BASEINFO.intn_dr_code
+  is '实习医师代码';
+comment on column DRGS.BS_BASEINFO.codr_code
+  is '编码员代码';
+comment on column DRGS.BS_BASEINFO.qltctrl_dr_code
+  is '质控医师代码';
+comment on column DRGS.BS_BASEINFO.qltctrl_nurs_code
+  is '质控护士代码';
+comment on column DRGS.BS_BASEINFO.deptdrt_code
+  is '科主任代码';
+comment on column DRGS.BS_BASEINFO.otp_wm_dise
+  is '门（急）诊诊断（西医诊断）';
+comment on column DRGS.BS_BASEINFO.wm_dise_code
+  is '西医疾病代码';
+comment on column DRGS.BS_BASEINFO.otpcmdise
+  is '门（急）诊诊断（中医诊断）';
+comment on column DRGS.BS_BASEINFO.tcmdisecode
+  is '中医疾病代码';
+comment on column DRGS.BS_BASEINFO.refldept_dept
+  is '转科科别';
+comment on column DRGS.BS_BASEINFO.jgdm
+  is '院区ID';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table DRGS.BS_BASEINFO
+  add constraint PK_BS_BASEINFO primary key (BRXH, JGDM)
+  using index 
+  tablespace USERS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );

@@ -1,0 +1,589 @@
+body {
+	margin: 0px;
+	SCROLLBAR-HIGHLIGHT-COLOR: #519BBE;
+	SCROLLBAR-SHADOW-COLOR: #519BBE;
+	COLOR: #000000;
+	SCROLLBAR-3DLIGHT-COLOR: #F4F9FC;
+	SCROLLBAR-TRACK-COLOR: #f9f9f9;
+	SCROLLBAR-DARKSHADOW-COLOR: #F4F9FC;
+	SCROLLBAR-BASE-COLOR: #F4F9FC;
+	background-color: #FFFFFF;
+	overflow: hidden;
+	font-size: 14px;
+	border-collapse: collapse;
+}
+.dl_bg{
+background-image:url(../images/bluewater/bluewater_dl_bg.png); 
+background-repeat:repeat-x; 
+background-position:top; 
+background-color:#F4F7F7;
+width:762px;
+height:512px;
+}
+.dl_dl{
+background-image:url(../images/bluewater/bluewater_dl_dl.png); 
+width:109px;
+height:33px;
+margin-top:14; margin-left:28;
+}
+.f_dl {
+	background-image: url(../images/bluewater/bluewater_dl_bt.png);
+	cursor: hand;
+	border: 0 none;
+	padding-top: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	height: 30px;
+	width:80px;
+	background-color: transparent;
+	overflow: visible;
+	font-weight:bold; 
+	color:#333
+}
+.dl_txt{
+	width:186px;
+	background-color:transparent;
+	border:0 none;
+	height:26px;
+	line-height: 22px;
+	padding-left:10px;
+}
+.titlebar_bg{
+	height:24px;
+	background-image:url(../images/bluewater/bluewater_titlebar_bg01.jpg);
+	table-layout:fixed;
+}
+.titlebar_bg td{
+	font-size:12px;
+	}
+.titlebar_bg02{
+	height:24px;
+	background-image:url(../images/bluewater/bluewater_titlebar_bg02.jpg);
+	padding-left: 15px;
+}
+.titlebar_bg02 td{	
+	color:#FFFFFF;
+	font-size:12px;
+
+}
+.titlebar_bg03{
+	height:24px;
+	background-image:url(../images/bluewater/bluewater_titlebar_bg03.jpg);
+	table-layout:fixed;
+}
+.titlebar_bg03_point{
+	background-image:url(../images/bluewater/bluewater_titlebar_bg03_point.gif);
+	background-repeat: no-repeat;
+	padding: 2 20 0 16;
+	cursor:hand;
+	color:#FFFFFF;
+	font-size: 12px;
+}
+.titlebar_logo_emr{
+	background-image:url(../images/bluewater/bluewater_titlebar_logo_emr.png);
+	background-repeat:no-repeat;
+	width:350px;
+	background-position: 10px 0px;
+}
+.titlebar_logo_emr_ys{
+	background-image:url(../images/bluewater/bluewater_titlebar_logo_emr_ys.png);
+	background-repeat:no-repeat;
+	width:350px;
+	background-position: 10px 0px;
+}
+.titlebar_logo_emr_hs{
+	background-image:url(../images/bluewater/bluewater_titlebar_logo_emr_hs.png);
+	background-repeat:no-repeat;
+	width:350px;
+	background-position: 10px 0px;
+}
+.titlebar_logo_emr_ywk{
+	background-image:url(../images/bluewater/bluewater_titlebar_logo_emr_ywk.png);
+	background-repeat:no-repeat;
+	width:350px;
+	background-position: 10px 0px;
+}
+.titlebar_logo_emr_hlb{
+	background-image:url(../images/bluewater/bluewater_titlebar_logo_emr_hlb.png);
+	background-repeat:no-repeat;
+	width:350px;
+	background-position: 10px 0px;
+}
+.titlebar_logo_cis{
+	background-image:url(../images/bluewater/bluewater_titlebar_logo_cis.png);
+	background-repeat:no-repeat;
+	width:350px;
+	background-position: 10px 0px;
+}
+.titlebar_icon_bg_left{
+width:8px;
+background-image:url(../images/titlebar_icon_bg.png); 
+background-position:0px left
+}
+.titlebar_icon_bg{
+background-image:url(../images/titlebar_icon_bg.png); background-position:-22px left
+}
+.titlebar_icon_bg_right{
+width:8px;
+background-image:url(../images/titlebar_icon_bg.png); background-position:-44px right
+}
+.toolbar_body_bg{
+background-color:#5EA9C9; 
+padding-top:1px;
+}
+.toolbar_bg{
+background-image:url(../images/bluewater/bluewater_toolbar2_bg.jpg);
+height:25px;
+width:100%;
+background-repeat:repeat-x
+}
+.toolbar_left{
+	background-image:url(../images/bluewater/bluewater_toolbar2_left.jpg);
+	width:5px;
+	background-repeat:no-repeat
+}
+.toolbar_right{
+background-image:url(../images/bluewater/bluewater_toolbar2_right.jpg);
+width:5px;
+background-repeat:no-repeat
+}
+.toolbar_center{
+color:#FFFFFF; 
+padding:2 0 0 0;
+}
+.toolbox_topleft{
+	background-image:url(../images/bluewater/bluewater_toolbox_left-corners.png);
+	height:30px;
+	padding-left:10px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+.toolbox_topright{
+	background-image:url(../images/bluewater/bluewater_toolbox_right-corners.png);
+	padding-right: 10px;
+	background-repeat: no-repeat;
+	background-position: right 0px;
+}
+.toolbox_topcenter{
+	background-image: url(../images/bluewater/bluewater_toolbox_topcenter.png);
+	height: 30px;
+	color: #ffffff;
+	font-weight: bold;
+	padding-top: 5px;
+}
+.toolbox_middleleft{
+	background-image:url(../images/bluewater/bluewater_toolbox_left-right.png);
+	background-repeat:repeat-y;
+	padding-left:10px;
+	background-color: #FFFFFF;
+	background-position: 0px 0px;
+	height: 100%;
+}
+.toolbox_middlecenter{
+	background-color: #FFFFFF;
+	height: 100%;
+}
+.toolbox_middleright{
+	background-image:url(../images/bluewater/bluewater_toolbox_left-right.png);
+	background-repeat:repeat-y;
+	background-position: right 0px;
+	padding-right: 10px;
+	height: 100%;
+}
+.toolbox_bottomleft{
+	height:11px;
+	background-image: url(../images/bluewater/bluewater_toolbox_left-corners.png);
+	background-repeat: no-repeat;
+	background-position: 0px bottom;
+	padding-left: 10px;
+}
+.toolbox_bottomcenter{
+	background-image:url(../images/bluewater/bluewater_toolbox_bottomcenter.png);
+	height: 11px;
+	overflow: hidden;
+}
+.toolbox_bottomright{
+	background-image:url(../images/bluewater/bluewater_toolbox_right-corners.png);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	padding-right: 10px;
+	height: 11px;
+}
+.toolbox_close{
+position:absolute; right:0;
+width:11px;
+height:9px;
+cursor:hand;
+background-image:url(../images/bluewater/bluewater_toolbox_close.png);
+background-repeat:no-repeat;
+}
+.main_bg{
+	background-image:url(../images/bluewater/bluewater_main_bg.jpg);
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#ffffff;
+	padding: 37 10 10 10;
+}
+.main_bg_ntool{
+	background-image:url(../images/main_bg_ntool.png);
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#ffffff;
+	padding: 15 10 5 10;
+}
+.main_bg_gray{
+	background-image:url(../images/bluewater/bluewater_main_bg_gray.jpg);
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#f7f7f7;
+	padding: 37 10 10 10;
+}
+.main_bg_tool_gray{
+	background-color:#ededed;
+	padding: 0 0 0 0;
+}
+.main_bg_ntool_gray{
+	background-image:url(../images/main_bg_ntool.png);
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#ededed;
+	padding: 10 0 0 0;
+}
+.main_down_bg_ntool{
+	background-image:url(../images/bluewater/bluewater_main_down_bg_ntool.png);
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#ffffff;
+	padding: 15 10 5 10;
+	width:100%; 
+	height:100%
+}
+.main_toolbar_bg{
+	background-image:url(../images/bluewater/bluewater_main_toolbar_bg.gif);
+	background-repeat:repeat-x;
+	background-position: 0px 29px;
+	width:100%;
+	margin:-37 0 0 0;
+	height:32px;
+	text-align: right;
+	padding: 3 10 0 0;
+	position: absolute;
+}
+.main_div {
+	height: 100%;
+	width: 100%;
+	padding-bottom: 0px;
+	overflow: auto;
+}
+.main_bg_search{
+background-image:url(../images/bluewater/bluewater_search_bg.png); 
+background-repeat:repeat-x; background-position: bottom; 
+background-color:#eff5f9;
+ padding:5 10 10 5;
+}
+.main_bg_search_gray{
+background-image: url(../images/bluewater/bluewater_search_bg_gray.png); 
+background-repeat:repeat-x; background-position: bottom; 
+background-color:#eff5f9;
+ padding:5 10 10 5;
+}
+.main_div_search{
+	padding: 10px;
+	height: 100%;
+	width: 100%;
+}
+.his_searcharea_bg{
+	background-image:url(../images/bluewater/bluewater_main_toolbar_bg.gif);
+	background-repeat:repeat-x;
+	background-position: top bottom;
+	width:100%;
+	margin-bottom:10;
+	padding-bottom:3;
+}
+.grid thead,.th_table thead,.tbody_table thead {
+	background-image: url(../images/bluewater/bluewater_grid_th_bg.jpg);
+	background-color: #CAE2EE;
+}
+.grid th,.th_table th,.tbody_table th {
+	border: 1px solid #9BC8DD;
+	
+}
+.grid  tbody td,.th_table  tbody td,.tbody_table tbody td {
+	border: 1px solid #9BC8DD;
+}
+.grid_th th{ background-color:#ECF5FB}
+.grid_box {
+	border: 1px solid #9BC8DD;
+}
+.grid_box thead {
+	background-image: url(../images/bluewater/bluewater_grid_th_bg.jpg);
+	background-color: #CAE2EE;
+	border-bottom: 1px solid #9BC8DD;
+}
+.grid_box thead th {
+	border-bottom: 1px solid #9BC8DD;
+}
+.grid_box td {
+	border-bottom: 1px solid #9BC8DD;
+}
+.none {
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.none td { 
+	border: 0 none;
+	border-collapse: collapse;
+	padding-bottom: 2px;
+	padding-top: 2px;
+}
+.his_groupbox{
+border:1 solid #9BC8DD;
+margin-bottom:10px;
+padding:0 10 10 10;
+}
+.his_groupbox legend {
+	font-weight: bold;
+	margin-right:10px;
+}
+.x-window-tc {
+	BACKGROUND: url(../images/bluewater/window/top-bottom.png) repeat-x 0px 0px;
+	OVERFLOW: hidden;
+	height: 25px;
+}
+.x-window-tl {
+	PADDING-LEFT: 6px;
+	BACKGROUND: url(../images/bluewater/window/left-corners.png) no-repeat 0px 0px;
+	height: 20px;
+}
+.x-window-tr {
+	PADDING-RIGHT: 6px; BACKGROUND: url(../images/bluewater/window/right-corners.png) no-repeat right 0px
+}
+.x-window-mc {
+	BORDER: #4791B8 1px solid;
+	PADDING: 5px;
+	BACKGROUND: #ffffff;
+	height: 100%;
+	overflow:hidden;
+}
+.x-window-mc_gray {
+	BORDER: #4791B8 1px solid;
+	PADDING: 0px;
+	BACKGROUND: #f7f7f7;
+	height: 100%;
+	overflow:hidden;
+}
+.x-window-ml {
+	PADDING-LEFT: 6px;
+	BACKGROUND: url(../images/bluewater/window/left-right.png) repeat-y 0px 0px;
+	height: 100%;
+}
+.x-window-mr {
+	PADDING-RIGHT: 6px;
+	BACKGROUND: url(../images/bluewater/window/left-right.png) repeat-y right 0px;
+	height: 100%;
+}
+.x-window-bl {
+	PADDING-LEFT: 6px;
+	BACKGROUND: url(../images/bluewater/window/left-corners.png) no-repeat 0px bottom
+}
+.x-window-br {
+	PADDING-RIGHT: 6px;
+	BACKGROUND: url(../images/bluewater/window/right-corners.png) no-repeat right bottom
+}
+.x-window-bc {
+	BACKGROUND: url(../images/bluewater/window/top-bottom.png) repeat-x 0px bottom;
+	height: 15px;
+}
+.x-window-header{
+	padding:7 0 0 5
+}
+/*tree*/
+.tree_bg{
+background-image:url(../images/bluewater/bluewater_tree_bg.jpg);
+background-repeat:repeat-x; 
+background-position:top;
+background-color:#f7f7f7;
+
+}
+.tree_tree{
+width:14; 
+height:11; 
+background-image:url(../images/bluewater/bluewater_tree_tree.png);
+margin-left:5px;
+}
+.tree_icon{
+width:14; 
+height:11; 
+background-image:url(../images/bluewater/bluewater_tree_icon.png);
+}
+.tree_itemline{
+padding:2px;background: url(../images/bluewater/bluewater_tree_itemline.png) no-repeat center bottom;
+}
+.tree_bg1{
+	background-image:url(../images/bluewater/bluewater_tree_bg1.jpg);
+	border-bottom:1px solid #97C7DE;
+	color:#000000;
+}
+.tree_itembg{
+border-bottom:1px solid #97C7DE;background:url(../images/bluewater/bluewater_tree_itembg.jpg) repeat-y;background-color:#F2F9F9;
+}
+.tree_title{
+background-image:url(../images/bluewater/bluewater_tree_title.gif);
+width:6px;
+height:12px;}
+.tabs-border{
+	border:1 solid #92C5DA;
+	padding: 10px;
+}
+.tabs-border-top{
+	border:1 solid #92C5DA;
+	height:2px;
+	background-color: #D0E5F1;
+}
+.tabs-left{
+	background-image:url(../images/bluewater/bluewater_tabs.png);
+	width: 12px;
+	background-position: 2 -81;
+	padding-left: 12px;
+	background-repeat: no-repeat;
+}
+.tabs-center{
+	background-image:url(../images/bluewater/bluewater_tabs.png);
+	background-position: 0 -108;
+	padding-top: 5px;
+}
+.tabs-right{
+	background-image:url(../images/bluewater/bluewater_tabs.png);
+	background-position: right -135px;
+	width: 10px;
+	padding-left: 10px;
+	background-repeat: no-repeat;
+}
+.tabs-left-active{
+	background-image:url(../images/bluewater/bluewater_tabs.png);
+	background-position: 2px 0px;
+	width: 12px;
+	height: 25px;
+	padding-left: 12px;
+	background-repeat: no-repeat;
+}
+.tabs-center-active{
+	background-image:url(../images/bluewater/bluewater_tabs.png);
+	background-position: 0px -27px;
+	padding-top: 5px;
+}
+.tabs-right-active{
+	background-image:url(../images/bluewater/bluewater_tabs.png);
+	background-position: right -54px;
+	width: 10px;
+	padding-right: 10px;
+	background-repeat: no-repeat;
+}
+.caseinfo_lock {
+	background-image: url(../images/caseinfo_lock.jpg);
+	width: 149px;
+	height: 195px;
+}
+.caseinfo_edit {
+	background-image: url(../images/caseinfo_edit.jpg);
+	width: 149px;
+	height: 195px;
+}
+.caseinfo_title {
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	height: 0px;
+	vertical-align: middle;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.caseinfo_date {
+	font-size: 15px;
+	font-weight: bold;
+	height: 30px;
+	padding: 0 20 0 10; 
+	text-align: right;
+}
+.Minorcaseinfo_lock {
+	background-image: url(../images/MinorOperationRecMain/caseinfo_lock.png);
+	width: 149px;
+	height: 195px;
+}
+.Minorcaseinfo_edit {
+	background-image: url(../images/MinorOperationRecMain/caseinfo_edit.png);
+	width: 149px;
+	height: 195px;
+}
+.Minorcaseinfo_problem {
+	background-image: url(../images/MinorOperationRecMain/caseinfo_problem.png);
+	width: 149px;
+	height: 195px;
+}
+.Consultcaseinfo_lock {
+	background-image: url(../images/ConsultationApplyMain/caseinfo_lock.png);
+	width: 149px;
+	height: 195px;
+}
+.Consultcaseinfo_edit {
+	background-image: url(../images/ConsultationApplyMain/caseinfo_edit.png);
+	width: 149px;
+	height: 195px;
+}
+.Consultcaseinfo_problem {
+	background-image: url(../images/ConsultationApplyMain/caseinfo_problem.png);
+	width: 149px;
+	height: 195px;
+}
+.Talkcaseinfo_lock {
+	background-image: url(../images/TalkRecMain/caseinfo_lock.png);
+	width: 149px;
+	height: 195px;
+}
+.Talkcaseinfo_edit {
+	background-image: url(../images/TalkRecMain/caseinfo_edit.png);
+	width: 149px;
+	height: 195px;
+}
+.Talkcaseinfo_problem {
+	background-image: url(../images/TalkRecMain/caseinfo_problem.png);
+	width: 149px;
+	height: 195px;
+}
+.Operacaseinfo_lock {
+	background-image: url(../images/TalkRecMain/caseinfo_lock.png);
+	width: 149px;
+	height: 195px;
+}
+.Operacaseinfo_edit {
+	background-image: url(../images/TalkRecMain/caseinfo_edit.png);
+	width: 149px;
+	height: 195px;
+}
+.Operacaseinfo_problem {
+	background-image: url(../images/TalkRecMain/caseinfo_problem.png);
+	width: 149px;
+	height: 195px;
+}
+.titlebar-former-patient{
+	background-image:url(../images/bluewater/selectFormerPatient.png);
+	background-repeat: no-repeat;
+	padding: 2 20 0 16;
+	cursor:hand;
+	color:#FFFFFF;
+	font-size: 12px;
+	vertical-align: middle;
+	text-align: middle;
+}
+.titlebar-next-patient{
+	background-image:url(../images/bluewater/selectNextPatient.png);
+	background-position:inherit;
+	background-repeat: no-repeat;
+	padding: 2 20 0 16;
+	cursor:hand;
+	color:#FFFFFF;
+	font-size: 12px;
+	vertical-align: middle;
+	text-align: middle;
+}

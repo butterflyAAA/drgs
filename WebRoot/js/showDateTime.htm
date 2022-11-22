@@ -1,0 +1,129 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>选择日期时间</title>
+<link href="../css/font.css" rel="stylesheet" type="text/css">
+<link rel=stylesheet type=text/css href="../css/ht.css">
+<link rel=stylesheet type=text/css href="../css/theme_bluewater.css">
+<script language="javascript" src="Basic.js"></script>
+<script language="javascript">
+function fPopUpCalendarDlg(ctrlobj)
+{
+  showx = event.screenX - event.offsetX - 4 - 210 ; // + deltaX;
+  showy = event.screenY - event.offsetY + 18; // + deltaY;
+  newWINwidth = 210 + 4 + 18;
+
+  retval = window.showModalDialog("calendar.htm", "", "dialogWidth:217px; dialogHeight:220px;status:no; directories:yes;scrollbars:no;Resizable=no; "  );
+  if( retval != null ){
+          ctrlobj.value = retval;
+  }
+  else{
+          //alert("canceled");
+  }
+}
+
+function returnVal(){
+  if ( (document.currform.hour.value=="")||(document.currform.minute.value=="") ){
+    alert("请输入时间！");
+    return false;
+  }
+  if(!checknumxx(document.currform.hour.value,0,23)){
+    alert("输入的小时数不正确，请重输！");
+    return false;
+  }
+  else{
+		var temp = document.currform.hour.value;
+		temp="0"+temp;
+		document.currform.hour.value=temp.substring(temp.length-2);
+  }
+  if(!checknumxx(document.currform.minute.value,0,59)){
+    alert("输入的分钟数不正确，请重输！");
+    return false;
+  }
+  else{
+		var temp = document.currform.minute.value;
+		temp="0"+temp;
+		document.currform.minute.value=temp.substring(temp.length-2);
+  }
+ if ( document.currform.mydate.value=="" ){
+    alert("请选择日期！");
+    return false;
+  }
+ window.returnValue = document.currform.mydate.value+" "+document.currform.hour.value+":"+document.currform.minute.value;
+ window.close();
+ 
+  //return document.currform.mydate.value+" "+document.currform.hour.value+":"+document.currform.minute.value;
+}
+
+</script>
+</head>
+
+<body leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"
+	height="100%">
+	<tr>
+		<td class="x-window-tl">
+		<div class="x-window-tr">
+		<div class="x-window-tc">
+		<div class="x-window-header">选择日期时间</div>
+		</div>
+		</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="x-window-ml">
+		<div class="x-window-mr">
+		<div class="x-window-mc">
+		<form method="POST" name="currform" action="--WEBBOT-SELF--">
+		<table width="375" border="0" cellspacing="0" cellpadding="0"
+			align="center" height="100%">
+			<tr>
+				<td width="20" height="45">&nbsp;</td>
+				<td width="70" align="right">日期：</td>
+				<td width="285"><input type="text" name="mydate" size="20">
+				<a id="thetime9" onclick="fPopUpCalendarDlg(mydate);return false;"><img
+					title="点击选择填写时间" height="20" alt="选择时间"
+					src="../images/calender.gif" width="20"></a> &nbsp;</td>
+			</tr>
+			<tr>
+				<td height="45">&nbsp;</td>
+				<td align="right">时：</td>
+				<td><input type="text" name="hour" size="5"> &nbsp;分： <input
+					type="text" name="minute" size="5"> &nbsp;</td>
+			</tr>
+			<tr align="center">
+				<td colspan="3" height="100%"></td>
+			</tr>
+			<tr align="center">
+				<td colspan="3" class="td_button"><input name="B1" type="button"
+					onclick="returnVal();return false;" value="确 定"> <input
+					type="button" onclick="window.close();" value="关 闭"></td>
+			</tr>
+		</table>
+		</form>
+		</div>
+		</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="x-window-bl">
+		<div class="x-window-br">
+		<div class="x-window-bc"></div>
+		</div>
+		</td>
+	</tr>
+</table>
+</body>
+<script type="text/javascript" defer="defer">
+var arg = window.dialogArguments;
+if(arg&&arg.defvalue){
+	if(arg.defvalue.length==14){
+		var defvalue = new String();
+		defvalue = arg.defvalue;
+		document.all.mydate.value=defvalue.substring(0, 4)+"-"+defvalue.substring(4, 6)+"-"+defvalue.substring(6, 8);
+		document.all.hour.value=defvalue.substring(8, 10);
+		document.all.minute.value=defvalue.substring(10, 12);
+	}
+}
+</script>
+</html>

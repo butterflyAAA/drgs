@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/7z.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/c3p0-0.9.2.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/ht.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/htdb-db.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/HTEditor.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/htdto.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/ojdbc5.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/orai18n-mapping.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/orai18n.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/xdb.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/axis.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/register.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/commons-discovery-0.2.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/commons-logging.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/jaxrpc.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/wsdl4j.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/emConfigInstall.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/fastjson-2.0.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/fastjson2-2.0.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/fastjson2-extension-2.0.1.jar!/" />
+    <conelement value="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/apache-tomcat-7.0.109" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/WebRoot/WEB-INF/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="7z.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/7z.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="c3p0-0.9.2.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/c3p0-0.9.2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="ht.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/ht.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="htdb-db.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/htdb-db.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="HTEditor.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/HTEditor.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="htdto.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/htdto.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="ojdbc5.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/ojdbc5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="orai18n-mapping.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/orai18n-mapping.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="orai18n.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/orai18n.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="xdb.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/xdb.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="axis.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/axis.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="register.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/register.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-discovery-0.2.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/commons-discovery-0.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-logging.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/commons-logging.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jaxrpc.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/jaxrpc.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="wsdl4j.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/wsdl4j.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="emConfigInstall.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/emConfigInstall.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="fastjson-2.0.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/fastjson-2.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="fastjson2-2.0.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/fastjson2-2.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="fastjson2-extension-2.0.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/fastjson2-extension-2.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/apache-tomcat-7.0.109" level="application" />
+  </component>
+</module>

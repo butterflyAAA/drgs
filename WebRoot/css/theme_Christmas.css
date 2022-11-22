@@ -1,0 +1,178 @@
+.titlebar_bg{
+height:42px;
+background-image:url(../images/Christmas/Christmas_titlebar_bg.jpg);
+table-layout:fixed;
+}
+.titlebar_logo_emr{
+	background-image:url(../images/Christmas/bluewater_titlebar_logo_emr.png);
+	background-repeat:no-repeat;
+	width:240px;
+		background-position: 20px 0px;
+}
+.titlebar_logo_cis{
+	background-image:url(../images/Christmas/bluewater_titlebar_logo_cis.png);
+	background-repeat:no-repeat;
+	width:240px;
+		background-position: 20px 0px;
+}
+.toolbar_body_bg{
+background-color:#AF1010; 
+padding-top:1px;
+}
+.toolbar_bg{
+background-image:url(../images/Christmas/Christmas_toolbar2_bg.jpg);
+height:25px;
+width:100%;
+background-repeat:repeat-x
+}
+.toolbar_left{
+background-image:url(../images/Christmas/Christmas_toolbar2_left.jpg);
+width:5px;
+background-repeat:no-repeat
+}
+.toolbar_right{
+background-image:url(../images/Christmas/Christmas_toolbar2_right.jpg);
+width:5px;
+background-repeat:no-repeat
+}
+.toolbar_center{
+color:#FFFFFF; 
+padding:2 0 0 0;
+}
+.toolbox_topleft{
+	background-image:url(../images/bluewater/bluewater_toolbox_topleft.png);
+	height:30px;
+	font-weight: bold;
+	padding: 0 0 0 10;
+}
+.toolbox_topright{
+background-image:url(../images/bluewater/bluewater_toolbox_topright.png)}
+.toolbox_middleleft{
+	background-image:url(../images/bluewater/bluewater_toolbox_middleleft.png);
+	background-repeat:repeat-y;
+	padding-left:10px;
+	background-color: #FFFFFF;
+}
+.toolbox_middleright{
+	background-image:url(../images/bluewater/bluewater_toolbox_middleright.png);
+	background-repeat:repeat-y;
+}
+.toolbox_bottomleft{
+background-image:url(../images/bluewater/bluewater_toolbox_bottomleft.png);
+height:10px;}
+.toolbox_bottomcenter{
+background-image:url(../images/bluewater/bluewater_toolbox_bottomcenter.png)
+}
+.toolbox_bottomright{
+background-image:url(../images/bluewater/bluewater_toolbox_bottomright.png)
+}
+.main_bg{
+	background-image:url(../images/Christmas/Christmas_main_bg.jpg);
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#ffffff;
+	padding: 37 5 5 5;
+}
+.main_bg_ntool{
+	background-image:url(../images/Christmas/Christmas_main_bg.jpg);
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#ffffff;
+	padding: 5;
+}
+.main_toolbar_bg{
+	background-image:url(../images/Christmas/Christmas_main_toolbar_bg.gif);
+	background-repeat:repeat-x;
+	background-position: 0px 29px;
+	width:100%;
+	margin:-37 0 0 0;
+	height:32px;
+	text-align: right;
+	padding: 3 10 0 0;
+	position: absolute;
+}
+.main_div {
+	height: 100%;
+	width: 100%;
+	padding-bottom: 10px;
+	overflow: auto;
+}
+.grid {
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+.grid thead {
+	background-image: url(../images/Christmas/Christmas_grid_th_bg.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	background-color: #F1DCDC;
+}
+
+.grid th {
+	border: 1px solid #ECB9B9;
+	font-weight: normal;
+	border-collapse: collapse;
+	text-align: center;
+	padding: 1 1 1 1;
+	line-height: 150%;
+}
+
+.grid tbody {
+	background-color: #ffffff;
+}
+
+.grid tbody td {
+	border: 1px solid #ECB9B9;
+	border-collapse: collapse;
+	padding: 1px;
+	line-height: 150%
+}
+.grid thead td {
+  border-collapse: collapse;
+  padding: 1px;
+  line-height: 150%
+}
+
+.grid .pad14 {
+	padding-left: 12px;
+	line-height: 150%
+}
+.grid_box {
+	border: 1px solid #ECB9B9;
+	border-collapse: collapse;
+	table-layout: fixed;
+	margin-top: 10px;
+}
+
+.grid_box thead {
+	background-image: url(../images/Christmas/Christmas_grid_th_bg.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	background-color: #F1DCDC;
+	border-bottom: 1px solid #ECB9B9;
+}
+
+.grid_box thead th {
+	border-bottom: 1px solid #ECB9B9;
+	border-collapse: collapse;
+	padding: 1px;
+	line-height: 150%;
+}
+
+.grid_box td {
+	border-bottom: 1px solid #ECB9B9;
+	border-collapse: collapse;
+	padding: 1px;
+	line-height: 150%;
+}
+
+.grid_box .pad14 {
+	padding-left: 12px;
+	line-height: 150%;
+}
+
+.grid_box .td_bc {
+	text-align: center;
+	vertical-align: bottom;
+}

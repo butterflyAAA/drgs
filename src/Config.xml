@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+	<DataSources Id="HTDB">
+		<Name>HTDB</Name>
+		<JNDI></JNDI>
+		<Driver>oracle.jdbc.driver.OracleDriver</Driver>
+			<URL>jdbc:oracle:thin:@192.168.0.41:1521:orcl</URL>
+		<!-- <URL>jdbc:oracle:thin:@192.168.1.48:1521:orcl</URL> -->
+		<User>adt</User>
+		<Password>haitaiinc</Password>
+	</DataSources>
+
+<!-- 	<DataSources Id="HIS">
+		<Name>HIS</Name>
+		<JNDI></JNDI>
+		<Driver>oracle.jdbc.driver.OracleDriver</Driver>
+		<URL>jdbc:oracle:thin:@192.168.1.252:1521:his</URL>
+		<User>his</User>
+		<Password>DBa54321</Password>
+	</DataSources> -->
+<!-- 	<DataSources Id="HIS">
+		<Name>HIS</Name>
+		<JNDI></JNDI>
+		<Driver>oracle.jdbc.driver.OracleDriver</Driver>
+		<URL>jdbc:oracle:thin:@192.168.0.38:1521:his</URL>
+		<User>wyxsgsyy</User>
+		<Password>DBa54321</Password>
+	</DataSources> -->
+		<DataSources>
+		<Name>WYXSGSYY</Name>
+		<JNDI></JNDI>
+		<Driver>oracle.jdbc.driver.OracleDriver</Driver>
+		<URL>jdbc:oracle:thin:@192.168.0.38:1521:his</URL>
+		<User>wyxsgsyy</User>
+		<Password>DBa54321</Password>
+	</DataSources>
+		<DataSources >
+		<Name>JHJYRKYY</Name>
+		<JNDI></JNDI>
+		<Driver>oracle.jdbc.driver.OracleDriver</Driver>
+		<URL>jdbc:oracle:thin:@192.168.0.38:1521:his</URL>
+		<User>jhjyrkyy</User>
+		<Password>DBa54321</Password>
+	</DataSources>
+		<DataSources Id="HIS">
+		<Name>WYHSXSYY</Name>
+		<JNDI></JNDI>
+		<Driver>oracle.jdbc.driver.OracleDriver</Driver>
+		<URL>jdbc:oracle:thin:@192.168.0.38:1521:his</URL>
+		<User>wyhsxsyy</User>
+		<Password>DBa54321</Password>
+	</DataSources>
+</Config>

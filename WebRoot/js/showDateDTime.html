@@ -1,0 +1,116 @@
+﻿<script language="javascript" src="Basic.js">
+</script>
+<script language="javascript">
+
+function fPopUpCalendarDlg(ctrlobj)
+{
+  showx = event.screenX - event.offsetX - 4 - 210 ; // + deltaX;
+  showy = event.screenY - event.offsetY + 18; // + deltaY;
+  newWINwidth = 210 + 4 + 18;
+
+  retval = window.showModalDialog("calendar.htm", "选择日期", "dialogWidth:197px; dialogHeight:210px;status:no; directories:yes;scrollbars:no;Resizable=no; "  );
+  if( retval != null ){
+          ctrlobj.value = retval;
+  }
+  else{
+          //alert("canceled");
+  }
+}
+
+function returnVal(){
+  
+  if ( (document.currform.hour.value=="")||(document.currform.minute.value=="") ){
+    alert("请输入时间！");
+    return false;
+  }
+  if(!checknumxx(document.currform.hour.value,0,23)){
+    alert("输入的小时数不正确，请重输！");
+    return false;
+  }
+  if(!checknumx(document.currform.minute.value,0,59)){
+    alert("输入的分钟数不正确，请重输！");
+    return false;
+  }
+
+ if ( document.currform.mydate.value=="" ){
+    alert("请选择日期！");
+    return false;
+  }
+ window.returnValue = document.currform.mydate.value+" "+document.currform.hour.value+":"+document.currform.minute.value;
+ window.close();
+ 
+  //return document.currform.mydate.value+" "+document.currform.hour.value+":"+document.currform.minute.value;
+}
+
+</script>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>选择日期时间</title>
+<link href="../css/font.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body leftmargin="0" topmargin="0">
+<form method="POST" name="currform" action="--WEBBOT-SELF--">
+  <!--webbot bot="SaveResults" U-File="D:\testxml\_private\form_results.txt"
+  S-Format="TEXT/CSV" S-Label-Fields="TRUE" -->
+  <table width="275" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr> 
+      <td height="10" colspan="3"></td>
+    </tr>
+    <tr> 
+      <td width="20">&nbsp;</td>
+      <td width="50" align="right"> 
+        日期：</td>
+      <td width="205"> 
+        <input type="text" name="mydate" size="20">
+        <a id=thetime9 onClick="fPopUpCalendarDlg(mydate);return false;">
+        <img title=点击选择填写时间 height=20 alt=选择时间 src="../images/calender.gif" width=20 align="absmiddle"></a>      
+        &nbsp; </td>      
+    </tr> 
+    <tr> 
+      <td height="10" colspan="3"></td>
+    </tr>     
+    <tr>       
+      <td>&nbsp;</td>      
+      <td align="right">时：</td>      
+      <td>       
+        <input type="text" name="hour" size="5">      
+        &nbsp;分：       
+        <input type="text" name="minute" size="5">      
+        &nbsp; </td>      
+    </tr> 
+    <tr> 
+      <td height="10" colspan="3"></td>
+    </tr>
+    <tr align="center">       
+      <td colspan="3">       
+        <input name="B1" type="button" class="f" onClick="returnVal();return false;" value="确 定">      
+      </td>      
+    </tr>          
+  </table>      
+</form>      
+      
+</body> 
+<script>
+date=new Date();
+year=date.getFullYear();
+month=date.getMonth()+1;
+dt=date.getDate();
+if(month<10)
+	month="0"+month;
+if(dt<10)
+	dt="0"+dt;
+document.currform.mydate.value=year+"-"+month+"-"+dt;
+hour=date.getHours();
+minutes=date.getMinutes();
+if(minutes<10)
+	minutes="0"+minutes;
+document.currform.hour.value=hour;
+document.currform.minute.value=minutes;
+</script>     
+      
+</html>      

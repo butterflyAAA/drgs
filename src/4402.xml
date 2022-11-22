@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+	<data>
+		<mdtrt_sn isnull="N"></mdtrt_sn><!-- 就医流水号 字符型 30  isnull="N" -->
+		<mdtrt_id></mdtrt_id><!-- 就诊ID 字符型 30   -->
+		<psn_no></psn_no><!-- 人员编号 字符型 30   -->
+		
+		<medins_orgcode>47197117X</medins_orgcode><!--医疗机构组织机构代码 字符型 50 -->
+		<vali_flag isnull="N">1</vali_flag><!-- 有效标志 字符型 3 Y isnull="N" -->
+		<medcas_drord_detl_id table="INPATIENT" isnull="N">ipid</medcas_drord_detl_id><!-- 病案医嘱明细id 字符型 30  isnull="N" -->
+		
+		<ipt_bed_no table="INPATIENT">bedNo</ipt_bed_no><!-- 住院床号 字符型 30   -->
+		<drord_no table="MEDICALORDER">orderSN</drord_no><!-- 医嘱号 字符型 30   -->
+		<isu_dept_code table="MEDICALORDER"  dict="caty">deptCode</isu_dept_code><!-- 下达科室代码 字符型 30   -->
+		<drord_isu_time table="MEDICALORDER" type="date" format="yyyy-MM-dd HH:mm:ss">startTime</drord_isu_time><!-- 医嘱下达时间 日期型    -->
+		<exe_dept_code  table="MEDICALORDER"  dict="caty">deptCode</exe_dept_code><!-- 执行科室代码 字符型 30   -->
+		<exe_dept_name table="MEDICALORDER"></exe_dept_name><!-- 执行科室名称 字符型 50   -->
+		<drord_chker_name table="MEDICALORDER">submitName</drord_chker_name><!-- 医嘱审核人姓名 字符型 50   -->
+		<drord_ptr_name table="MEDICALORDER">firstExecuteName</drord_ptr_name><!-- 医嘱执行人姓名 字符型 50   -->
+		<drord_grp_no table="MEDICALORDER" >parentOrderSN</drord_grp_no><!-- 医嘱组号 字符型 30   -->
+		<drord_type table="MEDICALORDER" dict="drord_type">longFlag</drord_type><!-- 医嘱类别 字符型 3 Y  -->
+		<drord_item_type_code table="MEDICALORDER" dict="drord_item_type_code">orderType</drord_item_type_code><!-- 医嘱项目分类代码 字符型 30   -->
+		<drord_item_type_name table="MEDICALORDER"  dict="drord_item_type" >orderType</drord_item_type_name><!-- 医嘱项目分类名称 字符型 100   -->
+		<drord_detl_code table="MEDICALORDER" >orderCode</drord_detl_code><!-- 医嘱明细代码 字符型 30   -->
+		<drord_detl_name table="MEDICALORDER" >orderContent</drord_detl_name><!-- 医嘱明细名称 字符型 100   -->
+		<medn_type_code table="MEDICALORDER" ></medn_type_code><!-- 药物类型代码 字符型 100   -->
+		<medn_type_name table="MEDICALORDER" ></medn_type_name><!-- 药物类型名称 字符型 100   -->
+		<drug_dosform table="MEDICALORDER" ></drug_dosform><!-- 药品剂型 字符型 30 Y  -->
+		<drug_dosform_name table="MEDICALORDER" ></drug_dosform_name><!-- 药品剂型名称 字符型 110   -->
+		<drug_spec table="DRUGORDER" >drugSpec</drug_spec><!-- 药品规格 字符型 50   -->
+		<dismed_cnt table="DRUGORDER" type="number">total</dismed_cnt><!-- 发药数量 数值型 5,2   -->
+		<dismed_cnt_unt table="DRUGORDER" >totalUnit</dismed_cnt_unt><!-- 发药数量单位 字符型 30   -->
+		<medn_use_frqu table="MEDICALORDER" >frequencyName</medn_use_frqu><!-- 药物使用-频率 字符型 20   -->
+		<medn_used_dosunt table="DRUGORDER" >doseUnit</medn_used_dosunt><!-- 药物使用-剂量单位 字符型 10   -->
+		<drug_used_sdose table="DRUGORDER" >dose</drug_used_sdose><!-- 药物使用-次剂量 数值型 16，4   -->
+		<drug_used_idose table="DRUGORDER" >total</drug_used_idose><!-- 药物使用-总剂量 数值型 16，4   -->
+		<drug_used_way_code table="DRUGORDER"  dict="drug_medc_way_code">routeName</drug_used_way_code><!-- 药物使用-途径代码 字符型 30 Y  -->
+		<drug_used_way table="DRUGORDER" dict="drug_medc_way">routeName</drug_used_way><!-- 药物使用-途径 字符型 100   -->
+		<medc_days table="" ></medc_days><!-- 用药天数 数值型 5,0   -->
+		<medc_begntime table="" ></medc_begntime><!-- 用药开始时间 日期时间型    -->
+		<medc_endtime table="" ></medc_endtime><!-- 用药停止时间 日期时间型    -->
+		<skintst_dicm table="DRUGORDER" dict="skintst_dicm">skinTest</skintst_dicm><!-- 皮试判别 字符型 10 Y  -->
+		<tcmherb_foote table="" ></tcmherb_foote><!-- 草药脚注 字符型 200   -->
+		<drord_endtime table="MEDICALORDER" type="date" format="yyyy-MM-dd HH:mm:ss">stopTime</drord_endtime><!-- 医嘱结束时间 日期时间型    -->
+		<ipt_dept_code table="INPATIENT" dict="caty">deptCode</ipt_dept_code><!-- 住院科室代码 字符型 30   -->
+		
+		<unif_purc_drug_flag table="" ></unif_purc_drug_flag><!-- 统一采购药品标志 字符型 3 Y  -->
+		<drug_mgt_plaf_code table="" ></drug_mgt_plaf_code><!-- 药品管理平台代码 字符型 50   -->
+		<drug_purc_code table="" ></drug_purc_code><!-- 药品采购代码 字符型 20   -->
+		<bas_medn_flag table="" ></bas_medn_flag><!-- 基本药物标志 字符型 3 Y  -->
+				
+	</data>
+</Config>
